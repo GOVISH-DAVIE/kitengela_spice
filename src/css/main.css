@@ -1,6 +1,62 @@
-.main {
+body {
+  background-color: #f3f3f3;
+}
+
+body .main {
   height: 100vh;
   width: 100vw;
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  color: #383838;
+  font-weight: 600;
+}
+
+body .main .navigation {
+  height: 70px;
+  width: 100vw;
+  float: left;
+}
+
+body .main .navigation .logo {
+  float: left;
+  height: 70px;
+  width: 20vw;
+}
+
+body .main .navigation .navi {
+  float: left;
+  height: 70px;
+  width: 60vw;
+  font-size: larger;
+}
+
+body .main .navigation .navi ul {
+  text-decoration: none;
+}
+
+body .main .navigation .navi ul li {
+  list-style: none;
+  text-decoration: none;
+  float: left;
+  width: 25%;
+}
+
+body .main .navigation .cartIco {
+  float: left;
+  height: 70px;
+  width: 20vw;
+  color: black;
+}
+
+body .main .navigation .cartIco ul {
+  text-decoration: none;
+}
+
+body .main .navigation .cartIco ul li {
+  list-style: none;
+  text-decoration: none;
+  float: left;
+  width: 25%;
 }
 /*# sourceMappingURL=main.css.map */

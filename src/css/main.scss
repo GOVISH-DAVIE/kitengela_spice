@@ -1,5 +1,61 @@
-.main{
-    height: 100vh;
-    width: 100vw;
-    background-color: red;
+$primaryFontColor : rgb(56, 56, 56);
+body{
+    
+    background-color: rgb(243, 243, 243);
+    .main {
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, .15); 
+        backdrop-filter: blur(50px);
+        color: $primaryFontColor;
+        font-weight: 600;
+        
+    
+        .navigation {
+            height: 70px;
+            width: 100vw; 
+            float: left;
+    
+            .logo {
+                float: left;
+                height: 70px;
+                width: 20vw; 
+            }
+    
+            .navi {
+                float: left;
+                height: 70px;
+                width: 60vw; 
+                font-size: larger;
+    
+                ul {
+                    text-decoration: none;
+    
+                    li {
+                        list-style: none;
+                        text-decoration: none;
+                        float: left;
+                        width: 25%;
+                    }
+                }
+            }
+            .cartIco{
+                float: left;
+                height: 70px;
+                width: 20vw; 
+                color: black;
+    
+                ul {
+                    text-decoration: none;
+    
+                    li {
+                        list-style: none;
+                        text-decoration: none;
+                        float: left;
+                        width: 25%;
+                    }
+                }
+            }
+        }
+    }
 }
