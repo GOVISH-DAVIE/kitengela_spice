@@ -4,6 +4,7 @@ import { Navigation } from './components/navigation'
 import { ShoppingCart } from '@material-ui/icons';
 import { TextField, MenuItem } from '@material-ui/core';
 import RecipeReviewCard from './components/cards';
+import { HeaderComponent } from './components/header';
 
 const currencies = [
   {
@@ -36,59 +37,27 @@ function App() {
 
   }, [])
   return (
-    <div className='main'>
-      <div className='navigation'>
-        <div className='logo '>logos</div>
+    <>
+      <div className='main'>
+        <Navigation />
+        <HeaderComponent />
 
-        <div className='navi '>
-          <ul>
-            <li>Home</li>
-            <li>Shop</li>
-            <li>Blog</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-        <div className='cartIco '>
-          <ul>
-            <li>$0.00</li>
-            <li><ShoppingCart /></li>
-          </ul>
-        </div>
       </div>
-      <div className='header'>
-        <div className='headerContainer' >
-          <div className='headerContainerGlass' >
-            <div className='navHeader'>
-              <p>Home / Product</p>
+      <div className='productListing' >
+        <div className='addon1'></div>
+        <div className='mainaddon' >
+          {
+            [1, 2, 3, 4, 5].map(
+              (e) => <RecipeReviewCard />
+            )
+          }
 
-              <h2>Shop</h2>
-              <div className='filter'>
-                <p>Showing 1 - 12 results
-
-                </p>
-              </div>
-            </div>
-
-
-            <div className='properties' >
-              <RecipeReviewCard />
-              <RecipeReviewCard />
-              <RecipeReviewCard />
-              <RecipeReviewCard />
-
-            </div>
-
-
-
-          </div>
         </div>
+
+        <div className='addon2'></div>
+
       </div>
-      <div className='ProductListing' >
-        <RecipeReviewCard />
-        <RecipeReviewCard />
-        <RecipeReviewCard />
-      </div>
-    </div>
+    </>
   );
 }
 

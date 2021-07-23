@@ -3,8 +3,6 @@ body {
 }
 
 body .main {
-  height: 100vh;
-  width: 100vw;
   background-color: rgba(255, 255, 255, 0.15);
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
@@ -14,20 +12,26 @@ body .main {
 
 body .main .navigation {
   height: 70px;
-  width: 100vw;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 body .main .navigation .logo {
   float: left;
   height: 70px;
-  width: 20vw;
+  width: 20%;
 }
 
 body .main .navigation .navi {
   float: left;
   height: 70px;
-  width: 60vw;
   font-size: larger;
+  width: 40%;
 }
 
 body .main .navigation .navi ul {
@@ -44,7 +48,7 @@ body .main .navigation .navi ul li {
 body .main .navigation .cartIco {
   float: left;
   height: 70px;
-  width: 20vw;
+  width: 20%;
   color: black;
 }
 
@@ -62,7 +66,7 @@ body .main .navigation .cartIco ul li {
 body .main .header {
   background-color: transparent;
   height: 80vh;
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,16 +144,34 @@ body .main .header .headerContainer .headerContainerGlass .properties {
           justify-content: space-evenly;
 }
 
-body .main .ProductListing {
+body .productListing {
   height: 100vh;
-  background-color: black;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body .productListing .addon1 {
+  width: 5vw;
+  height: 100vh;
+  background-color: rebeccapurple;
+}
+
+body .productListing .addon2 {
+  width: 5vw;
+  height: 100vh;
+  background-color: rebeccapurple;
+}
+
+body .productListing .mainaddon {
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
