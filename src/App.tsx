@@ -5,6 +5,7 @@ import { ShoppingCart } from '@material-ui/icons';
 import { TextField, MenuItem } from '@material-ui/core';
 import RecipeReviewCard from './components/cards';
 import { HeaderComponent } from './components/header';
+import ProductListing from './components/productList';
 
 const currencies = [
   {
@@ -44,11 +45,13 @@ function App() {
 
       </div>
       <div className='productListing' >
-        <div className='addon1'></div>
+        <div className='addon1'>
+        <p>  search buisness </p>
+        </div>
         <div className='mainaddon' >
           {
-            [1, 2, 3, 4, 5].map(
-              (e) => <RecipeReviewCard />
+            [1, 2, 3, 4, 5, 6, 7].map(
+              (e) => <> <ProductListing /> </>
             )
           }
 

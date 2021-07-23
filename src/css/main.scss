@@ -66,7 +66,7 @@ body {
 
         .header {
             background-color: transparent;
-            height: 80vh;
+            height: 90vh;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -117,31 +117,36 @@ body {
                 }
 
             }
-
         }
-
     }
 
     .productListing {
-        height: 100vh;
+       min-height: 100vh;
         background-color: transparent;
         display: flex;
         justify-content: space-evenly;
-        .addon1{
-            width: 5vw;
-            height: 100vh;
-            background-color: rebeccapurple;
-        }
-        .addon2{
-            width: 5vw;
-            height: 100vh;
-            background-color: rebeccapurple;
-        }
 
-        .mainaddon {
-            width: 90vw;
+        .addon1 {
+            width: 10vw;
+            min-height: 100vh;
+            background-color: transparent;
             display: flex;
+            align-items: center;
+            p{
+                transform: rotate(-90deg);
+                // height: 200px;
+                
+            }
+        }
+        .addon2 {
+            width: 10vw;
+            min-height: 100vh;
+            background-color: transparent;
+        }
+        .mainaddon {
+            width: 90vw; 
             justify-content: space-evenly;
+            background-color: transparent;
         }
 
 

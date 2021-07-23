@@ -65,7 +65,7 @@ body .main .navigation .cartIco ul li {
 
 body .main .header {
   background-color: transparent;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -145,7 +145,7 @@ body .main .header .headerContainer .headerContainerGlass .properties {
 }
 
 body .productListing {
-  height: 100vh;
+  min-height: 100vh;
   background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -156,24 +156,33 @@ body .productListing {
 }
 
 body .productListing .addon1 {
-  width: 5vw;
-  height: 100vh;
-  background-color: rebeccapurple;
+  width: 10vw;
+  min-height: 100vh;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .productListing .addon1 p {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 body .productListing .addon2 {
-  width: 5vw;
-  height: 100vh;
-  background-color: rebeccapurple;
+  width: 10vw;
+  min-height: 100vh;
+  background-color: transparent;
 }
 
 body .productListing .mainaddon {
   width: 90vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  background-color: transparent;
 }
 /*# sourceMappingURL=main.css.map */

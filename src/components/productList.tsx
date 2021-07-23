@@ -20,14 +20,12 @@ import { ShoppingCart, SettingsOverscan } from '@material-ui/icons';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            width: '22vw',
-            height: '65vh',
+            width: '24vw',
+            height: '70vh',
             borderRadius: '20px',
             float: 'left',
-            marginLeft:'.5vw',
-            // marginBottom:'5vh'
-            
-
+            marginLeft:'1.5vw',
+            marginBottom:'5vh' 
         },
         media: {
             height: 0,
@@ -49,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function RecipeReviewCard() {
+export default function ProductListing() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 
