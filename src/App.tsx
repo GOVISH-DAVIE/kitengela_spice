@@ -3,6 +3,7 @@ import './css/main.css';
 import { Navigation } from './components/navigation'
 import { ShoppingCart } from '@material-ui/icons';
 import { TextField, MenuItem } from '@material-ui/core';
+import RecipeReviewCard from './components/cards';
 
 const currencies = [
   {
@@ -62,17 +63,31 @@ function App() {
 
               <h2>Shop</h2>
               <div className='filter'>
-              <p>Showing 1 - 12 results  
+                <p>Showing 1 - 12 results
 
-              </p>
+                </p>
               </div>
             </div>
+
+
+            <div className='properties' >
+              <RecipeReviewCard />
+              <RecipeReviewCard />
+              <RecipeReviewCard />
+              <RecipeReviewCard />
+
+            </div>
+
 
 
           </div>
         </div>
       </div>
-
+      <div className='ProductListing' >
+        <RecipeReviewCard />
+        <RecipeReviewCard />
+        <RecipeReviewCard />
+      </div>
     </div>
   );
 }
