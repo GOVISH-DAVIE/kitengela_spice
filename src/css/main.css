@@ -15,7 +15,6 @@ body .main {
 body .main .navigation {
   height: 70px;
   width: 100vw;
-  float: left;
 }
 
 body .main .navigation .logo {
@@ -58,5 +57,50 @@ body .main .navigation .cartIco ul li {
   text-decoration: none;
   float: left;
   width: 25%;
+}
+
+body .main .header {
+  background-color: transparent;
+  height: 60vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main .header .headerContainer {
+  background-color: #1d1d1d;
+  height: 70vh;
+  width: 95vw;
+  border-radius: 40px;
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .main .header .headerContainer .headerContainerGlass {
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  height: 60vh;
+  width: 95vw;
+  border-radius: 40px;
 }
 /*# sourceMappingURL=main.css.map */

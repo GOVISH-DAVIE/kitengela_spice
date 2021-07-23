@@ -1,39 +1,43 @@
-import React,{useEffect, Suspense} from 'react';
-import logo from './logo.svg';
-import {AppBar ,Toolbar, IconButton,Typography, Button} from '@material-ui/core';
-import { Menu , ShoppingBasket, ShoppingCart} from '@material-ui/icons';
-import './css/main.css'; 
-import { useStyles } from './st';
-// import {add} from './components/math';
+import React, { useEffect } from 'react';
+import './css/main.css';
+import { Navigation } from './components/navigation'
+import { ShoppingCart } from '@material-ui/icons';
 
 function App() {
-  const classes = useStyles();
-  useEffect(() => { 
-   
-     
+  useEffect(() => {
+
+
   }, [])
   return (
-     <div className='main'>
-       <div className='navigation'>
-         <div className='logo '>logos</div>
+    <div className='main'>
+      <div className='navigation'>
+        <div className='logo '>logos</div>
 
-         <div className='navi '>
-           <ul>
-             <li>Home</li>
-             <li>Shop</li>
-             <li>Blog</li>
-             <li>Contact</li>
-           </ul>
-         </div>
-         <div className='cartIco '>
-           <ul>
-             <li>$0.00</li> 
-             <li><ShoppingCart /></li>
-           </ul>
-         </div>
+        <div className='navi '>
+          <ul>
+            <li>Home</li>
+            <li>Shop</li>
+            <li>Blog</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div className='cartIco '>
+          <ul>
+            <li>$0.00</li>
+            <li><ShoppingCart /></li>
+          </ul>
+        </div>
+      </div>
+      <div className='header'>
+        <div className='headerContainer' >
+          <div className='headerContainerGlass' >
+
+
+          </div>
+        </div>
       </div>
 
-     </div>
+    </div>
   );
 }
 
