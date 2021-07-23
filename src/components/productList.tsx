@@ -25,7 +25,9 @@ const useStyles = makeStyles((theme: Theme) =>
             borderRadius: '20px',
             float: 'left',
             marginLeft:'1.5vw',
-            marginBottom:'5vh' 
+            marginBottom:'5vh' ,
+            background:'rgba(255, 255, 255, .35)',
+            backdropFilter:"blur(50px)",
         },
         media: {
             height: 0,

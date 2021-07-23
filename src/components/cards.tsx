@@ -26,12 +26,14 @@ const useStyles = makeStyles((theme: Theme) =>
             float: 'left',
             marginLeft:'.5vw',
             // marginBottom:'5vh'
+            background:'rgba(255, 255, 255, .45)',
+            backdropFilter:"blur(50px)",
             
 
         },
         media: {
             height: 0,
-            paddingTop: '56.25%', // 16:9
+            paddingTop: '65.25%', // 16:9
         },
         expand: {
             transform: 'rotate(0deg)',
@@ -76,7 +78,7 @@ export default function RecipeReviewCard() {
             />
             <CardMedia
                 className={classes.media}
-                image="/static/images/cards/paella.jpg"
+                image="https://cdn-images.farfetch-contents.com/14/64/73/36/14647336_22738129_480.jpg"
                 title="Paella dish"
             />
             <CardContent>

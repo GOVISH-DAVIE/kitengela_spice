@@ -6,6 +6,7 @@ import { TextField, MenuItem } from '@material-ui/core';
 import RecipeReviewCard from './components/cards';
 import { HeaderComponent } from './components/header';
 import ProductListing from './components/productList';
+import { CartegoriesListing } from "./components/menus";
 
 const currencies = [
   {
@@ -42,23 +43,10 @@ function App() {
       <div className='main'>
         <Navigation />
         <HeaderComponent />
-
-      </div>
-      <div className='productListing' >
-        <div className='addon1'>
-        <p>  search buisness </p>
+        <CartegoriesListing />
+        <div className='primary'>
+          <CartegoriesListing />
         </div>
-        <div className='mainaddon' >
-          {
-            [1, 2, 3, 4, 5, 6, 7].map(
-              (e) => <> <ProductListing /> </>
-            )
-          }
-
-        </div>
-
-        <div className='addon2'></div>
-
       </div>
     </>
   );

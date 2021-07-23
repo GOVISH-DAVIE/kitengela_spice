@@ -142,13 +142,24 @@ body {
             width: 10vw;
             min-height: 100vh;
             background-color: transparent;
+            display: flex;
+            align-items: center;
+            p{
+                transform: rotate(-90deg);
+                // height: 200px;
+                
+            }
         }
         .mainaddon {
             width: 90vw; 
+            text-align: center;
             justify-content: space-evenly;
             background-color: transparent;
         }
 
 
     }
+}
+.primary{
+background-color: red;
 }
