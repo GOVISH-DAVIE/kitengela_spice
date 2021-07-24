@@ -7,6 +7,7 @@ import RecipeReviewCard from './components/cards';
 import { HeaderComponent } from './components/header';
 import ProductListing from './components/productList';
 import { CartegoriesListing } from "./components/menus";
+import SimpleMediaQuery from './components/mq';
 
 const currencies = [
   {
@@ -42,6 +43,7 @@ function App() {
     <>
       <div className='main'>
         <Navigation />
+        {/* <SimpleMediaQuery /> */}
         <HeaderComponent />
         <CartegoriesListing />
         <div className='primary'>

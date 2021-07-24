@@ -63,6 +63,41 @@ body .main .navigation .cartIco ul li {
   width: 25%;
 }
 
+body .main .mobileNav {
+  height: 70px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body .main .mobileNav .logo {
+  float: left;
+  height: 70px;
+  width: 20%;
+}
+
+body .main .mobileNav .cartIco {
+  float: left;
+  height: 70px;
+  width: 20%;
+  color: black;
+}
+
+body .main .mobileNav .cartIco ul {
+  text-decoration: none;
+}
+
+body .main .mobileNav .cartIco ul li {
+  list-style: none;
+  text-decoration: none;
+  float: left;
+  width: 25%;
+}
+
 body .main .header {
   background-color: transparent;
   height: 90vh;

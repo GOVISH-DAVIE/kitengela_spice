@@ -63,6 +63,38 @@ body {
                 }
             }
         }
+        .mobileNav{
+                // position:    ;
+                height: 70px;
+                width: 100%;
+                display: flex;
+                // background-color: black;
+    
+                justify-content: space-evenly;
+    
+                .logo {
+                    float: left;
+                    height: 70px;
+                    width: 20%;
+                }
+                .cartIco {
+                    float: left;
+                    height: 70px;
+                    width: 20%;
+                    color: black;
+    
+                    ul {
+                        text-decoration: none;
+    
+                        li {
+                            list-style: none;
+                            text-decoration: none;
+                            float: left;
+                            width: 25%;
+                        }
+                    }
+                }
+        }
 
         .header {
             background-color: transparent;
