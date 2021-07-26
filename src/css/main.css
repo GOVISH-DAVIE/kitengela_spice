@@ -100,7 +100,7 @@ body .main .mobileNav .cartIco ul li {
 
 body .main .header {
   background-color: transparent;
-  height: 90vh;
+  min-height: 90vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -165,7 +165,7 @@ body .main .header .headerContainer .headerContainerGlass .navHeader .filter {
 }
 
 body .main .header .headerContainer .headerContainerGlass .properties {
-  min-height: 100vh;
+  min-height: 140vh;
   width: 100%;
 }
 

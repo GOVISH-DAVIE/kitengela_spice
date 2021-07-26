@@ -104,7 +104,7 @@ const moblieCard = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             width: '46vw',
-            height: '55vh',
+            height: '45vh',
             borderRadius: '20px',
             float: 'left',
             marginLeft:'1vw',

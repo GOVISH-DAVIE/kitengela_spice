@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -19,15 +19,26 @@ import { ShoppingCart, SettingsOverscan } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+        mobliRoot: {
+            width: '48vw',
+            height: '50vh',
+            borderRadius: '20px',
+            float: 'left',
+            marginLeft: '1vw',
+            // marginRight:'.5',
+            marginBottom: '2vh',
+            background: 'rgba(255, 255, 255, .35)',
+            backdropFilter: "blur(50px)",
+        },
         root: {
             width: '24vw',
             height: '70vh',
             borderRadius: '20px',
             float: 'left',
-            marginLeft:'1.5vw',
-            marginBottom:'5vh' ,
-            background:'rgba(255, 255, 255, .35)',
-            backdropFilter:"blur(50px)",
+            marginLeft: '1.5vw',
+            marginBottom: '5vh',
+            background: 'rgba(255, 255, 255, .35)',
+            backdropFilter: "blur(50px)",
         },
         media: {
             height: 0,
@@ -50,6 +61,16 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function ProductListing() {
+    const [width, setWidth] = useState(window.innerWidth)
+
+    function handleResize() {
+        console.log('resized to: ', window.innerWidth, 'x', window.innerHeight)
+        setWidth(window.innerWidth);
+
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+    })
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 
@@ -58,7 +79,7 @@ export default function ProductListing() {
     };
 
     return (
-        <Card className={classes.root}>
+        <Card className={width > 960 ?classes.root : classes.mobliRoot}>
             <CardHeader
                 avatar={
                     <IconButton aria-label="settings">
@@ -90,6 +111,6 @@ export default function ProductListing() {
                 }} variant="h5" color="textPrimary" component="p" >$20.0
                 </Typography>
             </CardContent>
-         </Card>
+         </Card >
     );
 }

@@ -39,34 +39,34 @@ export const HeaderComponent = () => {
                 </div>
             </div>
         </div> : <div>
- <div className='header'>
-            <div className='headerContainer' >
-                <div className='headerContainerGlass' >
-                    <div className='navHeader'>
-                        <p>Home / Product</p>
+            <div className='header'>
+                <div className='headerContainer' >
+                    <div className='headerContainerGlass' >
+                        <div className='navHeader'>
+                            <p>Home / Product</p>
 
-                        <h2>Shop</h2>
-                        <div className='filter'>
-                            <p>Showing 1 - 12 results
+                            <h2>Shop</h2>
+                            <div className='filter'>
+                                <p>Showing 1 - 12 results
 
-                            </p>
+                                </p>
+                            </div>
                         </div>
+
+
+                        <div className='properties' >
+                            <MobileCard />
+                            <MobileCard />
+                            <MobileCard />
+                            <MobileCard />
+
+                        </div>
+
+
+
                     </div>
-
-
-                    <div className='properties' >
-                        <MobileCard />
-                        <MobileCard />
-                        <MobileCard />
-                        <MobileCard />
-
-                    </div>
-
-
-
                 </div>
             </div>
-        </div>
         </div>
     );
 }

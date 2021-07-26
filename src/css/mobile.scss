@@ -1,3 +1,192 @@
-body {
-    
+@media (max-width: 960px) {
+
+    $primaryFontColor: rgb(56, 56, 56);
+
+    body {
+
+        background-color: rgb(243, 243, 243);
+
+        .main {
+
+            background-color: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(50px);
+            color: $primaryFontColor;
+            font-weight: 600;
+
+
+            .navigation {
+                // position:    ;
+                height: 70px;
+                width: 100%;
+                display: flex;
+                // background-color: black;
+
+                justify-content: space-evenly;
+
+                .logo {
+                    float: left;
+                    height: 70px;
+                    width: 20%;
+                }
+
+                .navi {
+                    float: left;
+                    height: 70px;
+                    font-size: larger;
+                    width: 40%;
+
+                    ul {
+                        text-decoration: none;
+
+                        li {
+                            list-style: none;
+                            text-decoration: none;
+                            float: left;
+                            width: 25%;
+                        }
+                    }
+                }
+
+                .cartIco {
+                    float: left;
+                    height: 70px;
+                    width: 20%;
+                    color: black;
+
+                    ul {
+                        text-decoration: none;
+
+                        li {
+                            list-style: none;
+                            text-decoration: none;
+                            float: left;
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+
+            .mobileNav {
+                // position:    ;
+                height: 70px;
+                width: 100%;
+                display: flex;
+                // background-color: black;
+
+                justify-content: space-evenly;
+
+                .logo {
+                    float: left;
+                    height: 70px;
+                    width: 20%;
+                }
+
+                .cartIco {
+                    float: left;
+                    height: 70px;
+                    width: 20%;
+                    color: black;
+
+                    ul {
+                        text-decoration: none;
+
+                        li {
+                            list-style: none;
+                            text-decoration: none;
+                            float: left;
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+
+            .header {
+                background-color: transparent;
+                min-height: 110vh;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .headerContainer {
+                    background-color: rgb(29, 29, 29);
+                    height: 65vh;
+                    width: 95vw;
+                    border-radius: 40px;
+                    box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+                    -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+
+                    .headerContainerGlass {
+                        background-color: rgba(255, 255, 255, .15);
+                        backdrop-filter: blur(50px);
+                        height: 65vh;
+                        width: 95vw;
+                        border-radius: 40px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .navHeader {
+                            color: white;
+                            height: 100px;
+                            width: 90%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+
+                            .filter {
+                                height: 100px;
+                                font-size: 12px;
+
+                            }
+                        }
+
+                        .properties {
+                            min-height: 140vh;
+                            // background-color: red;
+                            width: 100%;
+
+                            // display: flex;
+                            // flex-direction: row;
+                            // justify-content: space-evenly;
+                        }
+                    }
+
+                }
+            }
+
+
+
+        }
+
+        .productListing {
+            min-height: 100vh;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-evenly;
+
+            .addon1 {
+                display: none;
+            }
+
+            .addon2 {
+                display: none;
+            }
+
+            .mainaddon {
+                width: 100vw;
+                text-align: center;
+                justify-content: space-evenly;
+                background-color: transparent;
+            }
+
+
+        }
+    }
+
+    .primary {
+        background-color: red;
+    }
+
 }

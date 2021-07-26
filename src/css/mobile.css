@@ -1,1 +1,180 @@
-/* No CSS *//*# sourceMappingURL=mobile.css.map */
+@media (max-width: 960px) {
+  body {
+    background-color: #f3f3f3;
+  }
+  body .main {
+    background-color: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(50px);
+    color: #383838;
+    font-weight: 600;
+  }
+  body .main .navigation {
+    height: 70px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  body .main .navigation .logo {
+    float: left;
+    height: 70px;
+    width: 20%;
+  }
+  body .main .navigation .navi {
+    float: left;
+    height: 70px;
+    font-size: larger;
+    width: 40%;
+  }
+  body .main .navigation .navi ul {
+    text-decoration: none;
+  }
+  body .main .navigation .navi ul li {
+    list-style: none;
+    text-decoration: none;
+    float: left;
+    width: 25%;
+  }
+  body .main .navigation .cartIco {
+    float: left;
+    height: 70px;
+    width: 20%;
+    color: black;
+  }
+  body .main .navigation .cartIco ul {
+    text-decoration: none;
+  }
+  body .main .navigation .cartIco ul li {
+    list-style: none;
+    text-decoration: none;
+    float: left;
+    width: 25%;
+  }
+  body .main .mobileNav {
+    height: 70px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  body .main .mobileNav .logo {
+    float: left;
+    height: 70px;
+    width: 20%;
+  }
+  body .main .mobileNav .cartIco {
+    float: left;
+    height: 70px;
+    width: 20%;
+    color: black;
+  }
+  body .main .mobileNav .cartIco ul {
+    text-decoration: none;
+  }
+  body .main .mobileNav .cartIco ul li {
+    list-style: none;
+    text-decoration: none;
+    float: left;
+    width: 25%;
+  }
+  body .main .header {
+    background-color: transparent;
+    min-height: 110vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .main .header .headerContainer {
+    background-color: #1d1d1d;
+    height: 65vh;
+    width: 95vw;
+    border-radius: 40px;
+    box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  }
+  body .main .header .headerContainer .headerContainerGlass {
+    background-color: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(50px);
+    height: 65vh;
+    width: 95vw;
+    border-radius: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body .main .header .headerContainer .headerContainerGlass .navHeader {
+    color: white;
+    height: 100px;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body .main .header .headerContainer .headerContainerGlass .navHeader .filter {
+    height: 100px;
+    font-size: 12px;
+  }
+  body .main .header .headerContainer .headerContainerGlass .properties {
+    min-height: 140vh;
+    width: 100%;
+  }
+  body .productListing {
+    min-height: 100vh;
+    background-color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  body .productListing .addon1 {
+    display: none;
+  }
+  body .productListing .addon2 {
+    display: none;
+  }
+  body .productListing .mainaddon {
+    width: 100vw;
+    text-align: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background-color: transparent;
+  }
+  .primary {
+    background-color: red;
+  }
+}
+/*# sourceMappingURL=mobile.css.map */
