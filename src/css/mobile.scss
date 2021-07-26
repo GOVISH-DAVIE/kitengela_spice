@@ -14,6 +14,29 @@
             font-weight: 600;
 
 
+/// forms UI forms
+            .login{
+                height: 100vh;
+                width: 100vw;
+                // background-color: red    ;
+                .canva{
+                   display: none;
+                }
+    
+                .form{
+                    width: 100vw;
+                    height: 100vh;
+                    // background-color: red;
+                    float: left;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+    
+            }
+
+/// forms UI forms
             .navigation {
                 // position:    ;
                 height: 70px;

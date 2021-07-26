@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             // background:'red',
-            width: '50%',
+            width: '70%',
         },
         tfiled: {
             margin: theme.spacing(1),
