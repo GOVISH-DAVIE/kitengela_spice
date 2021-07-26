@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
 import './css/main.css';
 import './css/mobile.css';
-import { Navigation } from './components/navigation' 
-import { HeaderComponent } from './components/header'; 
-import { CartegoriesListing } from "./components/menus"; 
+import { Navigation } from './components/navigation'
+import { HeaderComponent } from './components/header';
+import { CartegoriesListing } from "./components/menus";
 import { Login } from './components/auth/login';
 import { SignUp } from './components/auth/signup';
+import { ViewProduct } from './components/viewProduct/viewProduct';
 
- 
 
-function App() { 
 
-  
+function App() {
+
+
   useEffect(() => {
 
 
@@ -19,15 +20,16 @@ function App() {
   return (
     <>
       <div className='main'>
-        {/* <Navigation /> 
-        <HeaderComponent />
-        <CartegoriesListing />
+        <Navigation />
+        {/* <HeaderComponent /> */}
+        {/* <CartegoriesListing />
         <div className='primary'>
           <CartegoriesListing />
         </div> */}
 
+        <ViewProduct />
+        {/* <Login /> */}
 
-        <Login />
       </div>
     </>
   );

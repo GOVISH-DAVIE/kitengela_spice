@@ -20,7 +20,7 @@ export const Navigation = () => {
 
             <div className='navi '>
                 <ul>
-                    <li>Home {height}</li>
+                    <li>Home </li>
                     <li>Shop</li>
                     <li>Blog</li>
                     <li>Contact</li>
