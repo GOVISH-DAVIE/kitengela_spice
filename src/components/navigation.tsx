@@ -33,7 +33,11 @@ export const Navigation = () => {
                 </ul>
             </div>
         </div> : <div className="mobileNav">
-            <div className='logo '>logos</div>
+            <div className='logo '> 
+                <IconButton aria-label="settings">
+                     logos
+                </IconButton>
+            </div>
             <div className='cartIco '>
 
                 <IconButton aria-label="settings">

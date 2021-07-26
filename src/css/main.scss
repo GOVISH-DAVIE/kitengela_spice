@@ -139,12 +139,12 @@ body {
                     }
 
                     .properties {
-                        height: 100vh;
+                        min-height: 100vh;
                         // background-color: ;
                         width: 100%;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-evenly;
+                        // display: flex;
+                        // flex-direction: row;
+                        // justify-content: space-evenly;
                     }
                 }
 
