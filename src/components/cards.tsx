@@ -47,11 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function RecipeReviewCard() {
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+   
 
     return (
         <Card className={classes.root}>
@@ -129,11 +125,7 @@ const moblieCard = makeStyles((theme: Theme) =>
 
 export  function MobileCard() {
     const classes = moblieCard();
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+    
 
     return (
         <Card className={classes.root}>

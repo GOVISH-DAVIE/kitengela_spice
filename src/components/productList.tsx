@@ -65,11 +65,7 @@ export default function ProductListing() {
         window.addEventListener('resize', handleResize)
     })
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+    
 
     return (
         <Card className={width > 960 ?classes.root : classes.mobliRoot}>
