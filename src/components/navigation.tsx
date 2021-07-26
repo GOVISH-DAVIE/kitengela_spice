@@ -35,7 +35,7 @@ export const Navigation = () => {
         </div> : <div className="mobileNav">
             <div className='logo '> 
                 <IconButton aria-label="settings">
-                     logos
+                     logos {height}
                 </IconButton>
             </div>
             <div className='cartIco '>

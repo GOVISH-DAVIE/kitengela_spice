@@ -10,6 +10,22 @@ body .main {
   font-weight: 600;
 }
 
+body .main .login {
+  height: 100vh;
+  width: 100vw;
+}
+
+body .main .login .canva {
+  width: 40vw;
+  height: 100vh;
+  background-color: red;
+}
+
+body .main .login .form {
+  width: 40vw;
+  height: 100vh;
+}
+
 body .main .navigation {
   height: 70px;
   width: 100%;

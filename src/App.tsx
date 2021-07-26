@@ -4,6 +4,7 @@ import './css/mobile.css';
 import { Navigation } from './components/navigation' 
 import { HeaderComponent } from './components/header'; 
 import { CartegoriesListing } from "./components/menus"; 
+import { Login } from './components/auth/login';
 
  
 
@@ -17,13 +18,15 @@ function App() {
   return (
     <>
       <div className='main'>
-        <Navigation />
-        {/* <SimpleMediaQuery /> */}
+        {/* <Navigation /> 
         <HeaderComponent />
         <CartegoriesListing />
         <div className='primary'>
           <CartegoriesListing />
-        </div>
+        </div> */}
+
+
+        <Login />
       </div>
     </>
   );
