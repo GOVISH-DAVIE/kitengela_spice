@@ -27,10 +27,10 @@ function App() {
         <div className='primary'>
           <CartegoriesListing />
         </div> */}
+        <SignUp />
+        {/* <ViewProduct />
 
-        <ViewProduct />
-
-        <DescriptionProductVIew />
+        <DescriptionProductVIew /> */}
         {/* <Login /> */}
 
       </div>
