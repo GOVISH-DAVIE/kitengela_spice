@@ -258,6 +258,47 @@ body .productListing .mainaddon {
   background-color: red;
 }
 
+.ViewProduct .viewProductDetails {
+  width: 65vw;
+  float: left;
+  min-height: 100vh;
+}
+
+.ViewProduct .viewProductDetails .mainImage {
+  height: 70vh;
+  width: 65vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center img;
+      -ms-flex-pack: center img;
+          justify-content: center img;
+  justify-content-height: 70%;
+  justify-content-border-radius: 20px;
+}
+
+.ViewProduct .viewProductDetails .changeImg {
+  width: 65vw;
+  background-color: red;
+  height: 120px;
+}
+
+.ViewProduct .viewProductDetails .changeImg .nextImg {
+  height: 100px;
+  width: 100px;
+  border: solid 1px;
+}
+
+.ViewProduct .Productprice {
+  width: 30vw;
+  float: left;
+  min-height: 100vh;
+}
+
 .ViewProduct .Productprice .Count {
   height: 100px;
   width: 100%;
