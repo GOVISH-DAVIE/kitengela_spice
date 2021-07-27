@@ -150,7 +150,9 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
                         </InputAdornment>
                     ),
                 }} />
-            <TextField error={errors.password} value={password} onChange={handlePass} type='password' required name='password' className={classes.tfiled} id="standard-basic" label="password"
+            <TextField error={errors.password} value={password} onChange={handlePass} type={
+                passwordState ? "password" : "text"
+            } required name='password' className={classes.tfiled} id="standard-basic" label="password"
                 InputProps={{
                     endAdornment: (
                         <InputAdornment style={{
