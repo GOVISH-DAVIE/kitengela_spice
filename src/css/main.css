@@ -270,27 +270,50 @@ body .productListing .mainaddon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center img;
-      -ms-flex-pack: center img;
-          justify-content: center img;
-  justify-content-height: 70%;
-  justify-content-border-radius: 20px;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ViewProduct .viewProductDetails .mainImage img {
+  height: 98%;
+  border-radius: 20px;
 }
 
 .ViewProduct .viewProductDetails .changeImg {
   width: 65vw;
-  background-color: red;
   height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .ViewProduct .viewProductDetails .changeImg .nextImg {
   height: 100px;
   width: 100px;
   border: solid 1px;
+}
+
+.ViewProduct .viewProductDetails .changeImg .nextImg img {
+  height: inherit;
+  width: inherit;
 }
 
 .ViewProduct .Productprice {
