@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             width: '23vw',
-            height: '65vh',
+            height: '75vh',
             borderRadius: '20px',
             float: 'left',
             marginLeft:'.55vw',

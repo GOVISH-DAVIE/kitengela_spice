@@ -13,14 +13,17 @@ export const SignUp = () => {
 
     const authFunctions = (fd: FormData) => {
 
-        axios.post(`${url}register`, fd , {
-                headers: { 'Content-Type': 'application/json' }
+        axios.post(`${url}register`, fd, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
+        }
         ).then(
             (data) => {
                 console.log(data);
             }
-        )
+        ).catch(err => console.error(err, 22))
     }
     return (<div className="login">
         <div className="form">

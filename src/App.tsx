@@ -21,9 +21,9 @@ function App() {
   return (
     <>
       <div className='main'>
-         
-        {/* <HeaderComponent /> */}
-        {/* <CartegoriesListing />
+         {/* <Navigation />
+        <HeaderComponent />
+        <CartegoriesListing />
         <div className='primary'>
           <CartegoriesListing />
         </div> */}
