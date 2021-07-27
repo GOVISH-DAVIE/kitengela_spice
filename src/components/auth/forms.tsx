@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react'
+import React, { useState, useEffect, memo, useRef } from 'react'
 import { Mail, VpnKey, Visibility, VisibilityOff, Person, Phone } from "@material-ui/icons";
 import { createStyles, makeStyles, Theme, InputAdornment, TextField, Button } from '@material-ui/core';
 interface SignUpFormInterface {
@@ -19,10 +19,13 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFormInterface) => {
+    const formRef = useRef()
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         let form = e.currentTarget
         let fd = new FormData(form);
-        authFunc(fd)
+        console.log(form.checkValidity())
+
         e.preventDefault();
 
     }
@@ -36,7 +39,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
     const handleVisibility = () => setpasswordState(!passwordState)
     return (
         <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-            <TextField required name='name' className={classes.tfiled}
+            <TextField required name='name' type='text' className={classes.tfiled}
 
                 color="primary" id="standard-basic" label="Full Name" InputProps={{
                     startAdornment: (
@@ -45,7 +48,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
                         </InputAdornment>
                     ),
                 }} />
-            <TextField required name='tel' className={classes.tfiled}
+            <TextField type='tel' required name='tel' className={classes.tfiled}
 
                 color="primary" id="standard-basic" label="Telephone Number" InputProps={{
                     startAdornment: (
@@ -54,7 +57,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
                         </InputAdornment>
                     ),
                 }} />
-            <TextField required name='mail' className={classes.tfiled}
+            <TextField type='email' required name='mail' className={classes.tfiled}
 
                 color="primary" id="standard-basic" label="Email" InputProps={{
                     startAdornment: (
@@ -63,7 +66,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
                         </InputAdornment>
                     ),
                 }} />
-            <TextField required name='password' className={classes.tfiled} id="standard-basic" label="password"
+            <TextField type='password' required name='password' className={classes.tfiled} id="standard-basic" label="password"
                 InputProps={{
                     endAdornment: (
                         <InputAdornment style={{
@@ -78,6 +81,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
                         </InputAdornment>
                     ),
                 }} />
+            {/* <button type='submit'>submit</button> */}
 
             <Button className={classes.tfiled} variant="outlined" type='submit' >Submint</Button>
         </form>
