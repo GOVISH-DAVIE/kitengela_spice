@@ -1,86 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect, memo, useCallback } from 'react'
 import { createStyles, makeStyles, Theme, InputAdornment, TextField, Button } from '@material-ui/core';
 
 import { Mail, VpnKey, Visibility, VisibilityOff, Person, Phone } from "@material-ui/icons";
-
-export const SignUp = () =>  <div className="login">
-<div className="form">
-    <LoginTextFields />
-</div>
-<div className="canva"></div>
-
-</div>
+import axios from 'axios';
+import { url } from '../../utils/utils';
+import LoginTextFields from './login';
 
 
+import SignUpFormFields from "./forms";
 
+export const SignUp = () => {
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            // background:'red',
-            width: '50%',
-        },
-        tfiled: {
-            margin: theme.spacing(1),
-            width: '100%',
-            // borderColor: "yellow !important"
+    const authFunctions = (fd: FormData) => {
+        axios.post(`${url}register`, fd).then(
+            (data) => {
+                console.log(data);
 
+            }
+        )
+    }
+    return (<div className="login">
+        <div className="form">
+            <SignUpFormFields authFunc={authFunctions} />
+        </div>
+        <div className="canva"></div>
 
-
-        },
-    }),
-);
-
-export default function LoginTextFields() {
-    const classes = useStyles();
-    const [passwordState, setpasswordState] = React.useState(true)
-    const handleVisibility = () => setpasswordState(!passwordState)
-    return (
-        <form className={classes.root} noValidate autoComplete="off">
-               <TextField className={classes.tfiled}
-
-color="primary" id="standard-basic" label="Full Name" InputProps={{
-    startAdornment: (
-        <InputAdornment position="start">
-            <Person />
-        </InputAdornment>
-    ),
-}} />
-   <TextField className={classes.tfiled}
-
-color="primary" id="standard-basic" label="Telephone Number" InputProps={{
-    startAdornment: (
-        <InputAdornment position="start">
-            <Phone />
-        </InputAdornment>
-    ),
-}} />
-            <TextField className={classes.tfiled}
-
-                color="primary" id="standard-basic" label="Email" InputProps={{
-                    startAdornment: (
-                        <InputAdornment position="start">
-                            <Mail />
-                        </InputAdornment>
-                    ),
-                }} />
-            <TextField className={classes.tfiled} id="standard-basic" label="password"
-                InputProps={{
-                    endAdornment: (
-                        <InputAdornment style={{
-                            cursor: 'pointer'
-                        }} position="start" onClick={handleVisibility} >
-                            {passwordState ? <Visibility /> : <VisibilityOff />}
-                        </InputAdornment>
-                    ),
-                    startAdornment: (
-                        <InputAdornment position="start">
-                            <VpnKey />
-                        </InputAdornment>
-                    ),
-                }} />
-
-            <Button className={classes.tfiled} variant="outlined">Submint</Button>
-        </form>
-    );
+    </div>)
 }
+
+
+
+
+
