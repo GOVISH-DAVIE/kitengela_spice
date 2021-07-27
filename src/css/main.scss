@@ -1,5 +1,5 @@
 $primaryFontColor : rgb(56, 56, 56);
- 
+
 
 body {
 
@@ -11,18 +11,20 @@ body {
         backdrop-filter: blur(50px);
         color: $primaryFontColor;
         font-weight: 600;
-        .login{
+
+        .login {
             height: 100vh;
             width: 100vw;
+
             // background-color: red    ;
-            .canva{
+            .canva {
                 width: 40vw;
                 height: 100vh;
                 background-color: red;
                 float: left;
             }
 
-            .form{
+            .form {
                 width: 60vw;
                 height: 100vh;
                 // background-color: red;
@@ -87,37 +89,39 @@ body {
                 }
             }
         }
-        .mobileNav{
-                // position:    ;
+
+        .mobileNav {
+            // position:    ;
+            height: 70px;
+            width: 100%;
+            display: flex;
+            // background-color: black;
+
+            justify-content: space-evenly;
+
+            .logo {
+                float: left;
                 height: 70px;
-                width: 100%;
-                display: flex;
-                // background-color: black;
-    
-                justify-content: space-evenly;
-    
-                .logo {
-                    float: left;
-                    height: 70px;
-                    width: 20%;
-                }
-                .cartIco {
-                    float: left;
-                    height: 70px;
-                    width: 20%;
-                    color: black;
-    
-                    ul {
+                width: 20%;
+            }
+
+            .cartIco {
+                float: left;
+                height: 70px;
+                width: 20%;
+                color: black;
+
+                ul {
+                    text-decoration: none;
+
+                    li {
+                        list-style: none;
                         text-decoration: none;
-    
-                        li {
-                            list-style: none;
-                            text-decoration: none;
-                            float: left;
-                            width: 25%;
-                        }
+                        float: left;
+                        width: 25%;
                     }
                 }
+            }
         }
 
         .header {
@@ -177,11 +181,11 @@ body {
         }
 
 
-     
+
     }
 
     .productListing {
-       min-height: 100vh;
+        min-height: 100vh;
         background-color: transparent;
         display: flex;
         justify-content: space-evenly;
@@ -192,26 +196,30 @@ body {
             background-color: transparent;
             display: flex;
             align-items: center;
-            p{
+
+            p {
                 transform: rotate(-90deg);
                 // height: 200px;
-                
+
             }
-        }   
+        }
+
         .addon2 {
             width: 10vw;
             min-height: 100vh;
             background-color: transparent;
             display: flex;
             align-items: center;
-            p{
+
+            p {
                 transform: rotate(-90deg);
                 // height: 200px;
-                
+
             }
         }
+
         .mainaddon {
-            width: 90vw; 
+            width: 90vw;
             text-align: center;
             justify-content: space-evenly;
             background-color: transparent;
@@ -220,10 +228,23 @@ body {
 
     }
 }
-.primary{
-background-color: red;
+
+.primary {
+    background-color: red;
 }
 
 
-
-
+.ViewProduct {
+    .Productprice {
+        .Count {
+            height: 100px;
+            width: 100%; 
+            display:  flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+           
+            
+        }
+    }
+}
