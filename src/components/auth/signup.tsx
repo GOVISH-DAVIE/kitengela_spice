@@ -12,7 +12,12 @@ import SignUpFormFields from "./forms";
 export const SignUp = () => {
 
     const authFunctions = (fd: FormData) => {
-        axios.post(`${url}register`, fd).then(
+        
+        axios.post(`${url}register`, fd
+        , {
+            headers:{'Content-Type': 'application/json'}
+        }
+        ).then(
             (data) => {
                 console.log(data);
 

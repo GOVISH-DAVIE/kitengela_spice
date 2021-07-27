@@ -36,7 +36,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
     const handleVisibility = () => setpasswordState(!passwordState)
     return (
         <form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
-            <TextField name='name' className={classes.tfiled}
+            <TextField required name='name' className={classes.tfiled}
 
                 color="primary" id="standard-basic" label="Full Name" InputProps={{
                     startAdornment: (
@@ -45,7 +45,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
                         </InputAdornment>
                     ),
                 }} />
-            <TextField name='tel' className={classes.tfiled}
+            <TextField required name='tel' className={classes.tfiled}
 
                 color="primary" id="standard-basic" label="Telephone Number" InputProps={{
                     startAdornment: (
@@ -54,7 +54,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
                         </InputAdornment>
                     ),
                 }} />
-            <TextField name='mail' className={classes.tfiled}
+            <TextField required name='mail' className={classes.tfiled}
 
                 color="primary" id="standard-basic" label="Email" InputProps={{
                     startAdornment: (
@@ -63,7 +63,7 @@ const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFor
                         </InputAdornment>
                     ),
                 }} />
-            <TextField name='password' className={classes.tfiled} id="standard-basic" label="password"
+            <TextField required name='password' className={classes.tfiled} id="standard-basic" label="password"
                 InputProps={{
                     endAdornment: (
                         <InputAdornment style={{
