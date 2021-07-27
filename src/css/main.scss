@@ -258,10 +258,7 @@ body {
 
         .changeImg {
             width: 65vw;
-            // background-color: red;
             height: 120px;
-            // margin-top: 5vh;
-            
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -272,7 +269,8 @@ body {
                 height: 100px;
                 width: 100px;
                 border: solid 1px;
-                img{
+
+                img {
                     height: inherit;
                     width: inherit;
                 }

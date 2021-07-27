@@ -7,6 +7,7 @@ import { CartegoriesListing } from "./components/menus";
 import { Login } from './components/auth/login';
 import { SignUp } from './components/auth/signup';
 import { ViewProduct } from './components/viewProduct/viewProduct';
+import { DescriptionProductVIew } from './components/viewProduct/description';
 
 
 
@@ -28,6 +29,8 @@ function App() {
         </div> */}
 
         <ViewProduct />
+
+        <DescriptionProductVIew />
         {/* <Login /> */}
 
       </div>

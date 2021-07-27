@@ -10,5 +10,5 @@ export const ViewProduct = () => <div className='ViewProduct'>
 
         <PriceSection />
 
-    </div>
+    </div> 
 </div>
