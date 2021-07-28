@@ -3,11 +3,12 @@ import { createStyles, makeStyles, Theme, InputAdornment, TextField, Button } fr
 
 import { Mail, VpnKey, Visibility, VisibilityOff, Person, Phone } from "@material-ui/icons";
 import axios from 'axios';
-import { url } from '../../utils/utils';
+import { url } from '../../utils/utils'; 
 import LoginTextFields from './login';
 
 
 import SignUpFormFields from "./forms";
+import Cookies from '../../utils/cookies';
 
 export const SignUp = () => {
 
@@ -21,6 +22,7 @@ export const SignUp = () => {
         }
         ).then(
             (data) => {
+                Cookies.add('user',JSON.stringify(data.data),1)
                 console.log(data);
             }
         ).catch(err => console.error(err, 22))
