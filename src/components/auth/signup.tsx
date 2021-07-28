@@ -1,14 +1,10 @@
-import React, { useState, useEffect, memo, useCallback } from 'react'
-import { createStyles, makeStyles, Theme, InputAdornment, TextField, Button } from '@material-ui/core';
 
-import { Mail, VpnKey, Visibility, VisibilityOff, Person, Phone } from "@material-ui/icons";
 import axios from 'axios';
-import { url } from '../../utils/utils'; 
-import LoginTextFields from './login';
-
+import { url } from '../../utils/utils';
 
 import SignUpFormFields from "./forms";
 import Cookies from '../../utils/cookies';
+import { UserContextInterface } from '../../utils/context';
 
 export const SignUp = () => {
 
@@ -22,7 +18,8 @@ export const SignUp = () => {
         }
         ).then(
             (data) => {
-                Cookies.add('user',JSON.stringify(data.data),1)
+                let d: UserContextInterface = data.data
+                Cookies.add('user', JSON.stringify(d), 1)
                 console.log(data);
             }
         ).catch(err => console.error(err, 22))
