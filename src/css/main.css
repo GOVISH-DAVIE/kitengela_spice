@@ -363,19 +363,19 @@ body .productListing .mainaddon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .adminConsole .sidebar .close {
   width: 100%;
-  height: 5vh;
+  height: 7vh;
   background-color: black;
 }
 
 .adminConsole .sidebar .menu {
-  height: 92vh;
+  height: 91vh;
   width: 90%;
   background-color: rgba(255, 255, 255, 0.378);
   border-radius: 20px;
