@@ -18,6 +18,6 @@ export let defUser: UserContextInterface = {
 }
 const UserContext = createContext({
     value: defUser,
-    updateUser: (e:UserContextInterface) => { }
+    updateUser: (e: UserContextInterface) => { }
 });
 export default UserContext

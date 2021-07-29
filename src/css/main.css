@@ -344,4 +344,16 @@ body .productListing .mainaddon {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
+
+.adminConsole {
+  width: 100%;
+  background-color: red;
+  min-height: 100vh;
+}
+
+.adminConsole .sidebar {
+  width: 25vw;
+  min-height: 100vh;
+  background-color: white;
+}
 /*# sourceMappingURL=main.css.map */

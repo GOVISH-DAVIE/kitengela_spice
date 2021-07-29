@@ -20,9 +20,13 @@ export const Navigation = () => {
     return (<UserContext.Consumer>
         {(context) =>
             (height > 960) ? <div className='navigation'>
-                <div className='logo '>logos</div>
+                <div className='logo '>    <IconButton aria-label="settings">
+                    logos
+                </IconButton></div>
                 <div className='navi '>
-
+{
+    // JSON.stringify((context.value.user === null))
+}
                     {(context.value.user === null) === true ? <ul>
                         <li><Link to='/'>Home</Link> </li>
                         <li> <Link to='/login'>LogIn</Link> </li>
@@ -31,8 +35,8 @@ export const Navigation = () => {
                     </ul>
                         : <ul>
                             <li><Link to='/'>Home</Link> </li>
-                            <li> <Link to='/login'>LogIn</Link> </li>
-                            <li> <Link to='signup'>SignUp</Link> </li>
+                            <li> <Link to='/login'>shop</Link> </li>
+                            <li> <Link to='cartegories'>Add Cartegories</Link> </li>
                             <li><Link to='/'>Contact</Link></li>
                         </ul>}
                 </div>
@@ -45,7 +49,7 @@ export const Navigation = () => {
             </div> : <div className="mobileNav">
                 <div className='logo '>
                     <IconButton aria-label="settings">
-                        logos {height}
+                        logos
                     </IconButton>
                 </div>
                 <div className='cartIco '>

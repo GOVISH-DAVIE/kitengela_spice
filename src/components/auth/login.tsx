@@ -33,7 +33,7 @@ const LoginFragment: React.FC<LoginIteface> = ({ updateUser }: LoginIteface) => 
         }
         ).then(
             (data) => {
-                let d: UserContextInterface = data.data
+                let d: UserContextInterface = data.data.data
                 Cookies.add('user', JSON.stringify(d), 1)
                 console.log(data);
                 updateUser(d)
