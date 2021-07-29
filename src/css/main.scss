@@ -67,6 +67,10 @@ body {
                         text-decoration: none;
                         float: left;
                         width: 25%;
+                        a{
+                            text-decoration: none;
+                            color: $primaryFontColor;
+                        }
                     }
                 }
             }

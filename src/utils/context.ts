@@ -16,5 +16,8 @@ export let defUser: UserContextInterface = {
     user: null,
     token: null
 }
-const UserContext = createContext(defUser);
+const UserContext = createContext({
+    value: defUser,
+    updateUser: (e:UserContextInterface) => { }
+});
 export default UserContext

@@ -76,6 +76,11 @@ body .main .navigation .navi ul li {
   width: 25%;
 }
 
+body .main .navigation .navi ul li a {
+  text-decoration: none;
+  color: #383838;
+}
+
 body .main .navigation .cartIco {
   float: left;
   height: 70px;

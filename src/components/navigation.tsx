@@ -21,20 +21,19 @@ export const Navigation = () => {
         {(context) =>
             (height > 960) ? <div className='navigation'>
                 <div className='logo '>logos</div>
-
                 <div className='navi '>
-                   { context.user==null? <ul>
-                    <li><Link  to='/'>Home</Link> </li>
-                    <li> <Link to='/login'>LogIn</Link> </li>
-                    <li> <Link to='signup'>SignUp</Link> </li>
-                    <li><Link to='/'>Contact</Link></li>
+                    {context.value.user == null ? <ul>
+                        <li><Link to='/'>Home</Link> </li>
+                        <li> <Link to='/login'>LogIn</Link> </li>
+                        <li> <Link to='signup'>SignUp</Link> </li>
+                        <li><Link to='/'>Contact</Link></li>
                     </ul>
-                    : <ul>
-                    <li>Home </li>
-                    <li>Shop</li>
-                    <li>Blog</li>
-                    <li>Contact</li>
-                </ul>}
+                        : <ul>
+                            <li>Home </li>
+                            <li>Shop</li>
+                            <li>Blog</li>
+                            <li>Contact</li>
+                        </ul>}
                 </div>
                 <div className='cartIco '>
                     <ul>
