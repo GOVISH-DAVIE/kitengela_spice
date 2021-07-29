@@ -22,17 +22,18 @@ export const Navigation = () => {
             (height > 960) ? <div className='navigation'>
                 <div className='logo '>logos</div>
                 <div className='navi '>
-                    {context.value.user == null ? <ul>
+
+                    {(context.value.user === null) === true ? <ul>
                         <li><Link to='/'>Home</Link> </li>
                         <li> <Link to='/login'>LogIn</Link> </li>
                         <li> <Link to='signup'>SignUp</Link> </li>
                         <li><Link to='/'>Contact</Link></li>
                     </ul>
                         : <ul>
-                            <li>Home </li>
-                            <li>Shop</li>
-                            <li>Blog</li>
-                            <li>Contact</li>
+                            <li><Link to='/'>Home</Link> </li>
+                            <li> <Link to='/login'>LogIn</Link> </li>
+                            <li> <Link to='signup'>SignUp</Link> </li>
+                            <li><Link to='/'>Contact</Link></li>
                         </ul>}
                 </div>
                 <div className='cartIco '>

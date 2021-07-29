@@ -4,9 +4,9 @@ import './css/mobile.css';
 import UserContext, { defUser, UserContextInterface } from './utils/context';
 import { openRoutes } from "./utils/routes";
 import {
-  BrowserRouter as Router, 
-  Route, 
-} from "react-router-dom"; 
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
 
 function App() {
   const [userState, setUserState] = useState(defUser)
@@ -17,6 +17,7 @@ function App() {
   }, [])
   return (
     <Router>
+
       <UserContext.Provider value={{ value: userState, updateUser: updateUser }} >
 
         <div className='main'>

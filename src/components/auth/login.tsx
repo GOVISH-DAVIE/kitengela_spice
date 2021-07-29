@@ -1,12 +1,27 @@
 import axios from 'axios';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { UserContextInterface } from '../../utils/context';
+import UserContext, { UserContextInterface } from '../../utils/context';
 import Cookies from '../../utils/cookies';
 import { url } from '../../utils/utils';
 import LoginForms from './loginForms';
-
+interface LoginIteface {
+    updateUser: (e: UserContextInterface) => void
+}
 export const Login = () => {
+    return (<UserContext.Consumer>
+        {
+            (context) => <LoginFragment updateUser={context.updateUser} />
+        }
+    </UserContext.Consumer>)
+
+}
+
+
+
+
+
+const LoginFragment: React.FC<LoginIteface> = ({ updateUser }: LoginIteface) => {
     let [redirect, setRedirect] = useState(false)
     const authFunctions = (fd: FormData) => {
 
@@ -21,6 +36,7 @@ export const Login = () => {
                 let d: UserContextInterface = data.data
                 Cookies.add('user', JSON.stringify(d), 1)
                 console.log(data);
+                updateUser(d)
                 setRedirect(true)
             }
         ).catch(err => console.error(err, 22))
@@ -35,8 +51,3 @@ export const Login = () => {
         </div>
     </div>)
 }
-
-
-
-
-
