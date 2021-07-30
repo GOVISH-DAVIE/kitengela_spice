@@ -10,6 +10,7 @@ import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 export const Cartegories = () => {
     return (<div>
         <Navigation />
+        fefe
 
         <div className="adminConsole">
             <div className="sidebar">

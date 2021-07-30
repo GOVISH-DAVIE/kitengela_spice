@@ -14,9 +14,7 @@ body {
 
         .login {
             height: 100vh;
-            width: 100vw;
-
-            // background-color: red    ;
+            width: 100vw; 
             .canva {
                 width: 40vw;
                 height: 100vh;
@@ -26,8 +24,7 @@ body {
 
             .form {
                 width: 60vw;
-                height: 100vh;
-                // background-color: red;
+                height: 100vh; 
                 float: left;
                 display: flex;
                 flex-direction: column;
