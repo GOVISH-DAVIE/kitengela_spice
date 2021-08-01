@@ -28,8 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const SignUpFormFields: React.FC<SignUpFormInterface> = ({ authFunc }: SignUpFormInterface) => {
-    const formRef = useRef()
-    const nameElement = useRef()
+
     let [errors, setErrors] = useState({
         name: false,
         email: false,

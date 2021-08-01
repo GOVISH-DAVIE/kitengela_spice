@@ -35,7 +35,6 @@ const LoginFragment: React.FC<LoginIteface> = ({ updateUser }: LoginIteface) => 
             (data) => {
                 let d: UserContextInterface = data.data.data
                 Cookies.add('user', JSON.stringify(d), 1)
-                console.log(data);
                 updateUser(d)
                 setRedirect(true)
             }

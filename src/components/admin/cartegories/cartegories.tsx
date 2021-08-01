@@ -6,6 +6,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import { Typography, AccordionDetails, AccordionSummary, Container } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import { Dashboard } from "@material-ui/icons";
 
 export const Cartegories = () => {
     return (<div>
@@ -46,6 +47,12 @@ export default function MenuAccordion() {
         <div className={classes.root}>
             <Container>
                 <List>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <Dashboard />
+                        </ListItemIcon>
+                        <ListItemText primary="Dashboard" />
+                    </ListItem>
                     {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                         <Accordion elevation={0}>
                             <AccordionSummary
