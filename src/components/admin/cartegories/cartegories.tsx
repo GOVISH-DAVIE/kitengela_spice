@@ -6,13 +6,12 @@ import MailIcon from '@material-ui/icons/Mail';
 import { Typography, AccordionDetails, AccordionSummary, Container } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
-import { Dashboard } from "@material-ui/icons";
+import { CalendarViewDay, Dashboard } from "@material-ui/icons";
+import ListSidebar from "./sidebarList";
 
 export const Cartegories = () => {
     return (<div>
         <Navigation />
-        fefe
-
         <div className="adminConsole">
             <div className="sidebar">
                 <div className="close">
@@ -53,27 +52,25 @@ export default function MenuAccordion() {
                         </ListItemIcon>
                         <ListItemText primary="Dashboard" />
                     </ListItem>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <Accordion elevation={0}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                            >
-                                <Typography className={classes.heading}> <ListItem button key={text}>
-                                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                                    <ListItemText primary={text} />
-                                </ListItem></Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                    sit amet blandit leo lobortis eget.
-                                </Typography>
-                            </AccordionDetails>
-                        </Accordion>
 
-                    ))}
+                    <Accordion elevation={0}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                        >
+                            <Typography className={classes.heading}> <ListItem button >
+                                <ListItemIcon><CalendarViewDay /></ListItemIcon>
+                                <ListItemText primary={'Cartegories'} />
+                            </ListItem></Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                              <ListSidebar />
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+
                 </List>
 
             </Container>
