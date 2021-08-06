@@ -1,4 +1,4 @@
-import { createStyles, InputAdornment, makeStyles, TextField, Theme } from "@material-ui/core";
+import { Button, Checkbox, createStyles, Divider, FormControlLabel, InputAdornment, makeStyles, TextField, Theme, Typography } from "@material-ui/core";
 import { Mail, Sort } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -6,6 +6,8 @@ const useStyles = makeStyles((theme: Theme) =>
         root: {
             // background:'red',
             width: '50%',
+            margin: '5px',
+            // textAlign:'center'
         },
         tfiled: {
             margin: theme.spacing(1),
@@ -19,17 +21,41 @@ export const CartegoriesForms = () => {
 
 
     const classes = useStyles();
+    const handleSubmit = () => { }
 
 
-    return (<form className={classes.root} noValidate autoComplete="off">
-        <TextField type='email' required name='email' className={classes.tfiled}
-            color="primary" id="standard-basic" label="Email" InputProps={{
+    return (<form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+        <br />
+        <Typography variant="h6" gutterBottom>
+            New Cartegories
+        </Typography>
+        <Divider />
+        <TextField type='text' required name='CartegoryName' className={classes.tfiled}
+            color="primary" id="standard-basic" label="CartegoryName" InputProps={{
                 startAdornment: (
                     <InputAdornment position="start">
                         <Sort />
                     </InputAdornment>
                 ),
             }} />
+        <FormControlLabel
+            value="end"
+            control={<Checkbox name='type' color="primary" />}
+            label="Primary"
+            labelPlacement="end"
+        />
+        <FormControlLabel
+            value="end"
+            control={<Checkbox name='type' color="primary" />}
+            label="Sub Cartegory"
+            labelPlacement="end"
+        />
 
+        <br />
+        <Button style={{
+            margin: '10px'
+        }} size='large' variant='outlined' type='submit'>
+            Create
+        </Button>
     </form>)
 }

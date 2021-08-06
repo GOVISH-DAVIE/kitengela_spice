@@ -325,8 +325,9 @@ body {
         width: 70vw;
         min-height: 100vh;
         // background-color: rebeccapurple;
-        display:  flex; 
-        justify-content: center;
-        align-items: center;
+        float: left;
+        // display:  flex; 
+        // justify-content: center;
+        // align-items: center;
     }
 }
