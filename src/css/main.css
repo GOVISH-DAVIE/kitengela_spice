@@ -352,6 +352,7 @@ body .productListing .mainaddon {
 
 .adminConsole .sidebar {
   width: 25vw;
+  float: left;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -382,5 +383,10 @@ body .productListing .mainaddon {
   box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.433);
   -webkit-box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.419);
   -moz-box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.501);
+}
+
+.adminConsole .body {
+  width: 70vw;
+  min-height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */

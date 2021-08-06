@@ -7,7 +7,7 @@ import { Typography, AccordionDetails, AccordionSummary, Container } from '@mate
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { CalendarViewDay, Dashboard } from "@material-ui/icons";
-import ListSidebar from "./sidebarList";
+import { ListSidebar } from "./sidebarList";
 
 export const Cartegories = () => {
     return (<div>
@@ -21,6 +21,7 @@ export const Cartegories = () => {
                     <MenuAccordion />
                 </div>
             </div>
+         
 
         </div>
     </div>)
@@ -44,36 +45,36 @@ export default function MenuAccordion() {
 
     return (
         <div className={classes.root}>
-            <Container>
-                <List>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <Dashboard />
-                        </ListItemIcon>
-                        <ListItemText primary="Dashboard" />
-                    </ListItem>
+            <List>
+                <ListItem button>
+                    <ListItemIcon>
+                        <Dashboard />
+                    </ListItemIcon>
+                    <ListItemText primary="Dashboard" />
+                </ListItem>
 
-                    <Accordion elevation={0}>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                        >
-                            <Typography className={classes.heading}> <ListItem button >
-                                <ListItemIcon><CalendarViewDay /></ListItemIcon>
-                                <ListItemText primary={'Cartegories'} />
-                            </ListItem></Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                              <ListSidebar />
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
+                <Accordion elevation={0}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography className={classes.heading}> <ListItem button >
+                            <ListItemIcon><CalendarViewDay /></ListItemIcon>
+                            <ListItemText primary={'Cartegories'} />
+                        </ListItem></Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            <List component="nav" aria-label="main mailbox folders">
+                                <ListSidebar prefx='/am/cartegories/' items={['New', "All",]} />
+                            </List>
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
 
-                </List>
+            </List>
 
-            </Container>
         </div>
     );
 }

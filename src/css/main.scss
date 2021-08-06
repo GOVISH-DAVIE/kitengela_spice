@@ -295,6 +295,7 @@ body {
 
     .sidebar {
         width: 25vw;
+        float: left;
         min-height: 100vh; 
         display: flex;
         flex-direction: column;
@@ -319,5 +320,9 @@ body {
 
 
         }
+    }
+    .body{
+        width: 70vw;
+        min-height: 100vh;
     }
 }
