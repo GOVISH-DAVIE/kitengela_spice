@@ -1,6 +1,7 @@
 import { Container } from "@material-ui/core"
 import { Navigation } from "../../navigation"
 import MenuAccordion from "./cartegories"
+import { CartegoriesForms } from "./cartegoriesForms"
 
 export const NewCartegories = () => {
     return (<div>
@@ -15,9 +16,7 @@ export const NewCartegories = () => {
                 </div>
             </div>
             <div className="body">
-                <Container>
-cd
-                </Container>
+             <CartegoriesForms />
             </div>
 
         </div>      
