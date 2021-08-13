@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: 'center',
       display:'flex',
       alignContent:"center",
-      justifyContent:'center',
-      background: theme.palette.text.secondary,
+      justifyContent:"center",
+      color: theme.palette.text.secondary,
     },
   }),
 );
@@ -42,7 +42,7 @@ export const NewCartegories = () => {
                         <Grid item xs={6}>
 
                             <Paper className={classes.paper} >
-                                vfvf
+                                 
                                 <CartegoriesForms />
                             </Paper>
                         </Grid>

@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             // background:'red',
-            width: '50%',
+            width: '100%',
             margin: '5px',
             // textAlign:'center'
         },
@@ -30,14 +30,20 @@ export const CartegoriesForms = () => {
             New Cartegories
         </Typography>
         <Divider />
+        <br />
+        <br />
+
         <TextField type='text' required name='CartegoryName' className={classes.tfiled}
-            color="primary" id="standard-basic" label="CartegoryName" InputProps={{
+            color="primary" id="standard-basic" label="Cartegory Name" InputProps={{
                 startAdornment: (
                     <InputAdornment position="start">
                         <Sort />
                     </InputAdornment>
                 ),
             }} />
+            <br />
+            <br />
+
         <FormControlLabel
             value="end"
             control={<Checkbox name='type' color="primary" />}
