@@ -4,26 +4,55 @@ import MenuAccordion from "./cartegories"
 import { CartegoriesForms } from "./cartegoriesForms"
 
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
- 
+import axios from "axios";
+import { useEffect , useState} from "react";
+import { url } from "../../../utils/utils";
+import UserContext, { UserContextInterface } from "../../../utils/context";
+
 
 const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: 'center',
-      display:'flex',
-      alignContent:"center",
-      justifyContent:"center",
-      color: theme.palette.text.secondary,
-    },
-  }),
+    createStyles({
+        root: {
+            flexGrow: 1,
+        },
+        paper: {
+            padding: theme.spacing(2),
+            textAlign: 'center',
+            // float: 'left',
+              display:'flex',
+              alignContent:"center",
+              justifyContent:"center",
+              color: theme.palette.text.secondary,
+        },
+    }),
 );
 
 
-export const NewCartegories = () => {
+
+
+
+export const NewCartegories = ()=><UserContext.Consumer>
+    {
+        context=><NewCartegoriesFragment user={context.value.user} token={context.value.token} />
+    }
+</UserContext.Consumer>
+
+export const NewCartegoriesFragment:React.FC<UserContextInterface> = ({user, token}) => {
+    const [catregoryItem, setCatregoryItem] = useState([])
+  useEffect(() => {
+     axios.get(`${url}cartegories`,{
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer  ${token}`
+        }
+     }).then(data=>{
+         console.log('====================================');
+         console.log(data);
+         console.log('====================================');
+     })
+     ;
+  })
     const classes = useStyles();
     return (<div>
         <Navigation />
@@ -38,15 +67,24 @@ export const NewCartegories = () => {
             </div>
             <div className="body">
                 <Container>
-                    <Grid className={classes.root} >
-                        <Grid item xs={6}>
+                    <div className={classes.root} >
+                        <Grid container spacing={3}>
+                            <Grid item sm={6} xs={6}>
 
-                            <Paper className={classes.paper} >
+                                <Paper className={classes.paper} >
+                                    <CartegoriesForms />
+                                </Paper>
+                            </Grid>
+
+                            <Grid item sm={6} xs={6}>
+                                
+                                <Paper className={classes.paper} >
                                  
                                 <CartegoriesForms />
                             </Paper>
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    </div>
                 </Container>
             </div>
 

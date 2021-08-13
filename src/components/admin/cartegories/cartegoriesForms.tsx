@@ -1,9 +1,6 @@
 import { useState } from 'react'
-import { Button, Checkbox, Container, createStyles, Divider, FormControl, FormControlLabel, FormLabel, InputAdornment, makeStyles, Radio, RadioGroup, TextField, Theme, Typography } from "@material-ui/core";
-import { Mail, Sort } from "@material-ui/icons";
-
-import { createTheme } from '@material-ui/core';
-import { purple } from '@material-ui/core/colors';
+import { Button, Container, createStyles, Divider, FormControl, FormControlLabel, FormLabel, InputAdornment, makeStyles, Radio, RadioGroup, TextField, Theme, Typography } from "@material-ui/core";
+import { Sort } from "@material-ui/icons";
 import UserContext, { UserContextInterface } from '../../../utils/context';
 import axios from 'axios';
 import { url } from '../../../utils/utils';
@@ -38,9 +35,7 @@ const CartegoriesFragment = ({ user, token }: UserContextInterface) => {
     const classes = useStyles();
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
-        console.log('====================================');
-        console.log(value, token);
-        console.log('====================================');
+        console.log(value);
         let fd = new FormData(e.currentTarget)
 
 
@@ -48,7 +43,6 @@ const CartegoriesFragment = ({ user, token }: UserContextInterface) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-
                 'Authorization': `Bearer  ${token}`
             }
         })
@@ -68,7 +62,7 @@ const CartegoriesFragment = ({ user, token }: UserContextInterface) => {
         <br />
         <br />
 
-        <TextField type='text' required name='cartegoryName' className={classes.tfiled}
+        <TextField type='text' required name='name' className={classes.tfiled}
             color="primary" id="standard-basic" label="Cartegory Name" InputProps={{
                 startAdornment: (
                     <InputAdornment position="start">
