@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ShoppingCart, Menu } from "@material-ui/icons";
 import IconButton from '@material-ui/core/IconButton';
-import UserContext from '../utils/context';
-import { openRoutes } from '../utils/routes';
+import UserContext from '../utils/context'; 
 import { Link } from 'react-router-dom';
 
 

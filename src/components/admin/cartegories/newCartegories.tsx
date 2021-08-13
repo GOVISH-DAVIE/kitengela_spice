@@ -59,17 +59,13 @@ export const NewCartegoriesFragment: React.FC<UserContextInterface> = ({ user, t
                 'Accept': 'application/json',
                 'Authorization': `Bearer  ${token}`
             }
-        }).then(data => {
-            console.log('====================================');
-            console.log(data);
-            console.log('====================================');
-
+        }).then(data => { 
             let it = data.data
             setCatregoryItem(it)
         });
-    })
-    const AddToList = (form: cartegoriesItemInterface) => {
-        let ncart = catregoryItem.push(form)
+         // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+    const addToList = (form: cartegoriesItemInterface) => { 
         setCatregoryItem((e: cartegoriesItemInterface[]) => [...e, form])
     }
     const classes = useStyles();
@@ -91,7 +87,7 @@ export const NewCartegoriesFragment: React.FC<UserContextInterface> = ({ user, t
                             <Grid item sm={6} xs={6}>
 
                                 <Paper className={classes.paper} >
-                                    <CartegoriesForms />
+                                    <CartegoriesForms  addToList={addToList} />
                                 </Paper>
                             </Grid>
 

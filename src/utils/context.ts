@@ -1,5 +1,4 @@
-import { createContext } from "react";
-import { Interface } from "readline";
+import { createContext } from "react"; 
 export interface UserContextInterface {
     user: {
         name: string,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import './css/main.css';
 import './css/mobile.css';
 import UserContext, { defUser, UserContextInterface } from './utils/context';
@@ -20,8 +20,8 @@ function App() {
   const updateUser = (e: UserContextInterface) => { setUserState(e) }
   useEffect(() => {
     // log
-    console.log((Cookies.get('user') == ''));
-    if ((Cookies.get('user') == '')) {
+    console.log((Cookies.get('user') === ''));
+    if ((Cookies.get('user') === '')) {
       setUserState({
         user: null,
         token: null

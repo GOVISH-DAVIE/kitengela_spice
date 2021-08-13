@@ -4,6 +4,7 @@ import { Sort } from "@material-ui/icons";
 import UserContext, { UserContextInterface } from '../../../utils/context';
 import axios from 'axios';
 import { url } from '../../../utils/utils';
+import { cartegoriesItemInterface } from './newCartegories';
 
 // interface  
 const useStyles = makeStyles((theme: Theme) =>
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const CartegoriesFragment = ({ user, token }: UserContextInterface) => {
+const CartegoriesFragment: React.FC<{ addToList: (form: cartegoriesItemInterface) => void, user:UserContextInterface }> = ({ addToList, user }) => {
     const [value, setValue] = useState('female');
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,11 +44,12 @@ const CartegoriesFragment = ({ user, token }: UserContextInterface) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Bearer  ${token}`
+                'Authorization': `Bearer  ${user.token}`
             }
         })
             .then(data => {
                 console.log(data)
+                addToList(data.data)
             })
         return e.preventDefault();
     }
@@ -92,11 +94,11 @@ const CartegoriesFragment = ({ user, token }: UserContextInterface) => {
     </form>)
 }
 
-export const CartegoriesForms = () => {
+export const CartegoriesForms: React.FC<{ addToList: (form: cartegoriesItemInterface) => void }> = ({ addToList }) => {
 
     return <UserContext.Consumer>
         {
-            context => <CartegoriesFragment token={context.value.token} user={context.value.user} />
+            context => <CartegoriesFragment addToList={addToList}   user={context.value} />
         }
     </UserContext.Consumer>
 }
