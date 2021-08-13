@@ -25,8 +25,7 @@ export const CartegoryItemComponent: React.FC<{items: Array<cartegoriesItemInter
     return <div className={classes.root}>
 
         <List component="nav" aria-label="secondary mailbox folders">
-            {
-                // JSON.stringify(items)
+            { 
                 items.map((e, i) => <ListItem key={i} button>
                     <ListItemText primary={e.name} />
                 </ListItem>)

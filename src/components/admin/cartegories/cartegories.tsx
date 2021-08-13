@@ -1,9 +1,7 @@
 import { Navigation } from "../../navigation";
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import { Typography, AccordionDetails, AccordionSummary, Container } from '@material-ui/core';
+import Accordion from '@material-ui/core/Accordion'; 
+import { Typography, AccordionDetails, AccordionSummary } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { CalendarViewDay, Dashboard } from "@material-ui/icons";
