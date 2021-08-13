@@ -134,4 +134,4 @@ const LoginForms: React.FC<LoginFormIntaface> = ({ authFunc }: LoginFormIntaface
         </form>
     );
 }
-export default React.memo(LoginForms)
+    export default React.memo(LoginForms)

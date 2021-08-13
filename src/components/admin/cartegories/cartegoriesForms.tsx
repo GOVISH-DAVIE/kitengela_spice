@@ -1,7 +1,14 @@
-import {useState} from 'react'
-import { Button, Checkbox, createStyles, Divider, FormControlLabel, InputAdornment, makeStyles, Radio, RadioGroup, TextField, Theme, Typography } from "@material-ui/core";
+import { useState } from 'react'
+import { Button, Checkbox, Container, createStyles, Divider, FormControl, FormControlLabel, FormLabel, InputAdornment, makeStyles, Radio, RadioGroup, TextField, Theme, Typography } from "@material-ui/core";
 import { Mail, Sort } from "@material-ui/icons";
 
+import { createTheme } from '@material-ui/core';
+import { purple } from '@material-ui/core/colors';
+import UserContext, { UserContextInterface } from '../../../utils/context';
+import axios from 'axios';
+import { url } from '../../../utils/utils';
+
+// interface  
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -13,23 +20,41 @@ const useStyles = makeStyles((theme: Theme) =>
         tfiled: {
             margin: theme.spacing(1),
             width: '100%',
-
         },
+        radios: {
+            color: 'blue'
+        }
     }),
 );
 
-export const CartegoriesForms = () => {
+const CartegoriesFragment = ({ user, token }: UserContextInterface) => {
     const [value, setValue] = useState('female');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
-  };
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValue((event.target as HTMLInputElement).value);
+    };
 
 
     const classes = useStyles();
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
+        console.log('====================================');
+        console.log(value, token);
+        console.log('====================================');
+        let fd = new FormData(e.currentTarget)
 
+
+        axios.post(`${url}cartegories`, fd, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+
+                'Authorization': `Bearer  ${token}`
+            }
+        })
+            .then(data => {
+                console.log(data)
+            })
         return e.preventDefault();
     }
 
@@ -53,23 +78,16 @@ export const CartegoriesForms = () => {
             }} />
         <br />
         <br />
+        <Container>
 
-        <FormControlLabel
-            value="end"
-            control={<Radio name='type' color="primary" />}
-            label="Primary"
-            labelPlacement="end"
-        />
-        <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-            <FormControlLabel value="Primary" control={<Radio />} label="Primary" />
-            <FormControlLabel value="Sub Cartegory" control={<Radio />} label="Sub Cartegory" /> 
-          </RadioGroup>
-        {/* <FormControlLabel
-            value="end"
-            control={<Checkbox name='type' color="primary" />}
-            label="Sub Cartegory"
-            labelPlacement="end"
-        /> */}
+            <FormControl component="fieldset">
+                <FormLabel component="legend">Menu Type</FormLabel>
+            </FormControl>
+            <RadioGroup aria-label="gender" name="type" value={value} onChange={handleChange}>
+                <FormControlLabel value="Primary" control={<Radio color="default" />} label="Primary" />
+                <FormControlLabel value="SubCartegory" control={<Radio color="default" />} label="Sub Cartegory" />
+            </RadioGroup>
+        </Container>
 
         <br />
         <Button style={{
@@ -78,4 +96,13 @@ export const CartegoriesForms = () => {
             Create
         </Button>
     </form>)
+}
+
+export const CartegoriesForms = () => {
+
+    return <UserContext.Consumer>
+        {
+            context => <CartegoriesFragment token={context.value.token} user={context.value.user} />
+        }
+    </UserContext.Consumer>
 }

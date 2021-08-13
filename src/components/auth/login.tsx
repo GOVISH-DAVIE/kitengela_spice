@@ -28,7 +28,7 @@ const LoginFragment: React.FC<LoginIteface> = ({ updateUser }: LoginIteface) => 
         axios.post(`${url}login`, fd, {
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
             }
         }
         ).then(
