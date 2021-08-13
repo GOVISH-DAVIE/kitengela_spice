@@ -5,10 +5,10 @@ import { CartegoriesForms } from "./cartegoriesForms"
 
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import axios from "axios";
-import { useEffect , useState} from "react";
+import { useEffect, useState } from "react";
 import { url } from "../../../utils/utils";
 import UserContext, { UserContextInterface } from "../../../utils/context";
-import {  CartegoryItemComponent } from "./CartegoryItems";
+import { CartegoryItemComponent } from "./CartegoryItems";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -20,40 +20,58 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(2),
             textAlign: 'center',
             // float: 'left',
-              display:'flex',
-              alignContent:"center",
-              justifyContent:"center",
-              color: theme.palette.text.secondary,
+            display: 'flex',
+            alignContent: "center",
+            justifyContent: "center",
+            color: theme.palette.text.secondary,
         },
     }),
 );
 
 
+export interface cartegoriesItemInterface {
+    belongsTo: string
+    created_at: string,
+    description: string,
+    id: number,
+    name: string,
+    slung: string,
+    updated_at: string
+}
 
 
 
-export const NewCartegories = ()=><UserContext.Consumer>
+
+
+export const NewCartegories = () => <UserContext.Consumer>
     {
-        context=><NewCartegoriesFragment user={context.value.user} token={context.value.token} />
+        context => <NewCartegoriesFragment user={context.value.user} token={context.value.token} />
     }
 </UserContext.Consumer>
+let defaultCArtegoryVal: cartegoriesItemInterface[] = []
 
-export const NewCartegoriesFragment:React.FC<UserContextInterface> = ({user, token}) => {
-    const [catregoryItem, setCatregoryItem] = useState([])
-  useEffect(() => {
-     axios.get(`${url}cartegories`,{
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': `Bearer  ${token}`
-        }
-     }).then(data=>{
-         console.log('====================================');
-         console.log(data);
-         console.log('====================================');
-     })
-     ;
-  })
+export const NewCartegoriesFragment: React.FC<UserContextInterface> = ({ user, token }) => {
+    const [catregoryItem, setCatregoryItem] = useState(defaultCArtegoryVal)
+    useEffect(() => {
+        axios.get(`${url}cartegories`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer  ${token}`
+            }
+        }).then(data => {
+            console.log('====================================');
+            console.log(data);
+            console.log('====================================');
+
+            let it = data.data
+            setCatregoryItem(it)
+        });
+    })
+    const AddToList = (form: cartegoriesItemInterface) => {
+        let ncart = catregoryItem.push(form)
+        setCatregoryItem((e: cartegoriesItemInterface[]) => [...e, form])
+    }
     const classes = useStyles();
     return (<div>
         <Navigation />
@@ -78,11 +96,11 @@ export const NewCartegoriesFragment:React.FC<UserContextInterface> = ({user, tok
                             </Grid>
 
                             <Grid item sm={6} xs={6}>
-                                
-                                <Paper className={classes.paper} >
-                                 
-                                <CartegoryItemComponent />
-                            </Paper>
+
+                                <Paper elevation={0} color={'transparent'} className={classes.paper} >
+
+                                    <CartegoryItemComponent items={catregoryItem} />
+                                </Paper>
                             </Grid>
                         </Grid>
                     </div>
