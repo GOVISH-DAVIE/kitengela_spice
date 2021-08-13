@@ -1,4 +1,5 @@
-import { Button, Checkbox, createStyles, Divider, FormControlLabel, InputAdornment, makeStyles, TextField, Theme, Typography } from "@material-ui/core";
+import {useState} from 'react'
+import { Button, Checkbox, createStyles, Divider, FormControlLabel, InputAdornment, makeStyles, Radio, RadioGroup, TextField, Theme, Typography } from "@material-ui/core";
 import { Mail, Sort } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -18,13 +19,22 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const CartegoriesForms = () => {
+    const [value, setValue] = useState('female');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value);
+  };
 
 
     const classes = useStyles();
-    const handleSubmit = () => { }
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
 
-    return (<form onSubmit={handleSubmit} className={classes.root} noValidate autoComplete="off">
+        return e.preventDefault();
+    }
+
+
+    return (<form onSubmit={handleSubmit} method='post' className={classes.root} noValidate autoComplete="off">
         <br />
         <Typography variant="h6" gutterBottom>
             New Cartegories
@@ -33,7 +43,7 @@ export const CartegoriesForms = () => {
         <br />
         <br />
 
-        <TextField type='text' required name='CartegoryName' className={classes.tfiled}
+        <TextField type='text' required name='cartegoryName' className={classes.tfiled}
             color="primary" id="standard-basic" label="Cartegory Name" InputProps={{
                 startAdornment: (
                     <InputAdornment position="start">
@@ -41,21 +51,25 @@ export const CartegoriesForms = () => {
                     </InputAdornment>
                 ),
             }} />
-            <br />
-            <br />
+        <br />
+        <br />
 
         <FormControlLabel
             value="end"
-            control={<Checkbox name='type' color="primary" />}
+            control={<Radio name='type' color="primary" />}
             label="Primary"
             labelPlacement="end"
         />
-        <FormControlLabel
+        <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+            <FormControlLabel value="Primary" control={<Radio />} label="Primary" />
+            <FormControlLabel value="Sub Cartegory" control={<Radio />} label="Sub Cartegory" /> 
+          </RadioGroup>
+        {/* <FormControlLabel
             value="end"
             control={<Checkbox name='type' color="primary" />}
             label="Sub Cartegory"
             labelPlacement="end"
-        />
+        /> */}
 
         <br />
         <Button style={{

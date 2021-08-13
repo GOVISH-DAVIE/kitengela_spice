@@ -4,6 +4,7 @@ $primaryFontColor : rgb(56, 56, 56);
 body {
 
     background-color: rgb(243, 243, 243);
+    // background-color: #E4EBF6;
 
     .main {
 
@@ -14,7 +15,8 @@ body {
 
         .login {
             height: 100vh;
-            width: 100vw; 
+            width: 100vw;
+
             .canva {
                 width: 40vw;
                 height: 100vh;
@@ -24,7 +26,7 @@ body {
 
             .form {
                 width: 60vw;
-                height: 100vh; 
+                height: 100vh;
                 float: left;
                 display: flex;
                 flex-direction: column;
@@ -171,7 +173,7 @@ body {
                     .properties {
                         min-height: 140vh;
                         // background-color: red;
-                        width: 100%; 
+                        width: 100%;
                     }
                 }
 
@@ -196,7 +198,7 @@ body {
             align-items: center;
 
             p {
-                transform: rotate(-90deg); 
+                transform: rotate(-90deg);
             }
         }
 
@@ -208,7 +210,7 @@ body {
             align-items: center;
 
             p {
-                transform: rotate(-90deg); 
+                transform: rotate(-90deg);
             }
         }
 
@@ -231,7 +233,7 @@ body {
 .ViewProduct {
     .viewProductDetails {
         width: 65vw;
-        float: left; 
+        float: left;
         min-height: 100vh;
 
         .mainImage {
@@ -290,13 +292,13 @@ body {
 }
 
 .adminConsole {
-    width: 100%; 
+    width: 100%;
     min-height: 100vh;
 
     .sidebar {
         width: 25vw;
         float: left;
-        min-height: 100vh; 
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -305,7 +307,7 @@ body {
         .close {
             width: 100%;
             height: 7vh;
-            background-color: black;
+            background-color: rgb(242, 242, 242);
         }
 
         .menu {
@@ -313,15 +315,17 @@ body {
             width: 90%;
             background-color: rgba(255, 255, 255, 0.378);
             border-radius: 20px;
-
-            box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.433);
-            -webkit-box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.419);
-            -moz-box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.501);
+            box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
+                -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
+            // box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.433);
+            // -webkit-box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.419);
+            // -moz-box-shadow: 2px 7px 22px -6px rgba(0, 0, 0, 0.501);
 
 
         }
     }
-    .body{
+
+    .body {
         width: 70vw;
         min-height: 100vh;
         // background-color: rebeccapurple;
