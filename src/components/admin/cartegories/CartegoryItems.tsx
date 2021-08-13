@@ -1,3 +1,3 @@
-export const CartegoryItem = () => {
-    return 22
+export const CartegoryItemComponent = () => {
+    return <> 22 </>
 }

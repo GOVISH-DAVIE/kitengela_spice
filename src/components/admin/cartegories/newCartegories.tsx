@@ -8,6 +8,7 @@ import axios from "axios";
 import { useEffect , useState} from "react";
 import { url } from "../../../utils/utils";
 import UserContext, { UserContextInterface } from "../../../utils/context";
+import {  CartegoryItemComponent } from "./CartegoryItems";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -80,7 +81,7 @@ export const NewCartegoriesFragment:React.FC<UserContextInterface> = ({user, tok
                                 
                                 <Paper className={classes.paper} >
                                  
-                                <CartegoriesForms />
+                                <CartegoryItemComponent />
                             </Paper>
                             </Grid>
                         </Grid>
