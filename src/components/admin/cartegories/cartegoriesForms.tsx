@@ -39,9 +39,8 @@ const CartegoriesFragment: React.FC<{ addToList: (form: cartegoriesItemInterface
             setsub(false)
         }
     }, [value])
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue((event.target as HTMLInputElement).value);
-    };
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>  setValue((event.target as HTMLInputElement).value);
+    
     const handleChangeBto = (event: React.ChangeEvent<HTMLInputElement>) => setBto((event.target as HTMLInputElement).value);
     
 
