@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button, Container, createStyles, Divider, FormControl, FormControlLabel, FormLabel, InputAdornment, makeStyles, Radio, RadioGroup, TextField, Theme, Typography } from "@material-ui/core";
 import { Sort } from "@material-ui/icons";
 import UserContext, { UserContextInterface } from '../../../utils/context';
@@ -25,12 +25,25 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const CartegoriesFragment: React.FC<{ addToList: (form: cartegoriesItemInterface) => void, user:UserContextInterface }> = ({ addToList, user }) => {
-    const [value, setValue] = useState('female');
+const CartegoriesFragment: React.FC<{ addToList: (form: cartegoriesItemInterface[]) => void, user: UserContextInterface, items: Array<cartegoriesItemInterface> }> = ({ addToList, user, items }) => {
+    const [value, setValue] = useState('Primary');
+    const [bto, setBto] = useState('');
+    const [sub, setsub] = useState(false)
 
+    useEffect(() => {
+        if (value !== 'Primary') {
+            console.log(22);
+            setsub(true)
+
+        } else {
+            setsub(false)
+        }
+    }, [value])
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue((event.target as HTMLInputElement).value);
     };
+    const handleChangeBto = (event: React.ChangeEvent<HTMLInputElement>) => setBto((event.target as HTMLInputElement).value);
+    
 
 
     const classes = useStyles();
@@ -84,6 +97,18 @@ const CartegoriesFragment: React.FC<{ addToList: (form: cartegoriesItemInterface
                 <FormControlLabel value="SubCartegory" control={<Radio color="default" />} label="Sub Cartegory" />
             </RadioGroup>
         </Container>
+        {sub ? <Container>
+            <FormControl component="fieldset">
+                <FormLabel component="legend">Sub Cartegory Of:</FormLabel>
+            </FormControl>
+            <RadioGroup aria-label="gender" name="belongto" value={bto} onChange={handleChangeBto}>
+
+                {
+                    items.map((e, i) => <FormControlLabel key={`${i}radios`} value={`${e.id}`} control={<Radio color="default" />} label={e.name} />
+                    )
+                }
+            </RadioGroup>
+        </Container> : <></>}
 
         <br />
         <Button style={{
@@ -94,11 +119,11 @@ const CartegoriesFragment: React.FC<{ addToList: (form: cartegoriesItemInterface
     </form>)
 }
 
-export const CartegoriesForms: React.FC<{ addToList: (form: cartegoriesItemInterface) => void }> = ({ addToList }) => {
+export const CartegoriesForms: React.FC<{ addToList: (form: cartegoriesItemInterface[]) => void, items: Array<cartegoriesItemInterface> }> = ({ addToList, items }) => {
 
     return <UserContext.Consumer>
         {
-            context => <CartegoriesFragment addToList={addToList}   user={context.value} />
+            context => <CartegoriesFragment items={items} addToList={addToList} user={context.value} />
         }
     </UserContext.Consumer>
 }

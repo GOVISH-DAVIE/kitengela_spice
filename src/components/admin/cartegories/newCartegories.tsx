@@ -36,7 +36,17 @@ export interface cartegoriesItemInterface {
     id: number,
     name: string,
     slung: string,
-    updated_at: string
+    updated_at: string,
+    get_sub_cartegories: {
+        belongsTo: string
+        created_at: string,
+        description: string,
+        id: number,
+        name: string,
+        slung: string,
+        updated_at: string,
+        get_sub_cartegories: []
+    }[] | []
 }
 
 
@@ -59,14 +69,17 @@ export const NewCartegoriesFragment: React.FC<UserContextInterface> = ({ user, t
                 'Accept': 'application/json',
                 'Authorization': `Bearer  ${token}`
             }
-        }).then(data => { 
+        }).then(data => {
+            console.log('====================================');
+            console.log(token);
+            console.log('====================================');
             let it = data.data
             setCatregoryItem(it)
         });
-         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
-    const addToList = (form: cartegoriesItemInterface) => { 
-        setCatregoryItem((e: cartegoriesItemInterface[]) => [...e, form])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+    const addToList = (form: cartegoriesItemInterface[]) => {
+        setCatregoryItem((e: cartegoriesItemInterface[]) => [...form])
     }
     const classes = useStyles();
     return (<div>
@@ -87,7 +100,7 @@ export const NewCartegoriesFragment: React.FC<UserContextInterface> = ({ user, t
                             <Grid item sm={6} xs={6}>
 
                                 <Paper className={classes.paper} >
-                                    <CartegoriesForms  addToList={addToList} />
+                                    <CartegoriesForms items={catregoryItem} addToList={addToList} />
                                 </Paper>
                             </Grid>
 
