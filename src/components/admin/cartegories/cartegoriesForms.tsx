@@ -59,10 +59,7 @@ const CartegoriesFragment: React.FC<{ addToList: (form: cartegoriesItemInterface
                 'Authorization': `Bearer  ${user.token}`
             }
         })
-            .then(data => {
-                console.log(data)
-                addToList(data.data)
-            })
+            .then(data =>  addToList(data.data)  )
         return e.preventDefault();
     }
 

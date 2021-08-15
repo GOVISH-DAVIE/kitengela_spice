@@ -69,17 +69,11 @@ export const NewCartegoriesFragment: React.FC<UserContextInterface> = ({ user, t
                 'Accept': 'application/json',
                 'Authorization': `Bearer  ${token}`
             }
-        }).then(data => {
-            console.log('====================================');
-            console.log(token);
-            console.log('====================================');
-            let it = data.data
-            setCatregoryItem(it)
-        });
+        }).then(data => setCatregoryItem(data.data));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    const addToList = (form: cartegoriesItemInterface[]) => {
-        setCatregoryItem((e: cartegoriesItemInterface[]) => [...form])
+    const addToList = (elements: cartegoriesItemInterface[]) => {
+        setCatregoryItem((e: cartegoriesItemInterface[]) => [...elements])
     }
     const classes = useStyles();
     return (<div>
