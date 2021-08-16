@@ -4,7 +4,7 @@ import Accordion from '@material-ui/core/Accordion';
 import { Typography, AccordionDetails, AccordionSummary } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
-import { CalendarViewDay, Dashboard } from "@material-ui/icons";
+import {  Dashboard } from "@material-ui/icons";
 import { ListSidebar } from "./sidebarList";
 
 export const Cartegories = () => {
@@ -51,25 +51,36 @@ export default function MenuAccordion() {
                     <ListItemText primary="Dashboard" />
                 </ListItem>
 
-                <Accordion elevation={0}>
+                <Accordion  >
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                        <Typography className={classes.heading}> <ListItem button >
-                            <ListItemIcon><CalendarViewDay /></ListItemIcon>
-                            <ListItemText primary={'Cartegories'} />
-                        </ListItem></Typography>
+                        <Typography className={classes.heading}> Cartegories </Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography>
-                            <List component="nav" aria-label="main mailbox folders">
+                    <AccordionDetails> 
+                            <List  className={classes.root} component="nav" aria-label="main mailbox folders">
                                 <ListSidebar prefx='/am/cartegories/' items={['New', "All",]} />
-                            </List>
-                        </Typography>
+                            </List> 
                     </AccordionDetails>
                 </Accordion>
+
+                <Accordion  >
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography className={classes.heading}> Products </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails> 
+                            <List  className={classes.root} component="nav" aria-label="main mailbox folders">
+                                <ListSidebar prefx='/am/products/' items={['New', "All",]} />
+                            </List> 
+                    </AccordionDetails>
+                </Accordion>
+
 
             </List>
 

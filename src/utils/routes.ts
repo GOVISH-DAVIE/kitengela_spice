@@ -1,5 +1,6 @@
 import { Cartegories } from "../components/admin/cartegories/cartegories";
 import { NewCartegories } from "../components/admin/cartegories/newCartegories";
+import { NewProducts } from "../components/admin/products/new";
 import { AuthenticationFalback } from "../components/auth/authenticationFallback";
 import { Login } from "../components/auth/login";
 import { SignUp } from "../components/auth/signup";
@@ -17,12 +18,17 @@ export const protectedRoutes = [
     {
         path: '/am/cartegories/new',
         component: NewCartegories
-    }
-    ,
+    },
+    {
+        path: '/am/products/new',
+        component: NewProducts
+    },
+
     {
         path: '/login',
         component: AuthenticationFalback
-    }
+    },
+
 ]
 
 export const openRoutes = [

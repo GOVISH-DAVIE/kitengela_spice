@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import ListItem from '@material-ui/core/ListItem'; 
-import ListItemText from '@material-ui/core/ListItemText'; 
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 interface ListSidebarInterfance {
     items: Array<String>,
@@ -11,26 +11,27 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             width: '100%',
-            maxWidth: 360,
+            // maxWidth: 360,
+            textDecoration:'none',
+            color:theme.palette.text.primary,
             backgroundColor: theme.palette.background.paper,
             // backgroundColor: 'red',
         },
     }),
 );
 
- 
+
 
 export const ListSidebar: React.FC<ListSidebarInterfance> = ({ items, prefx }: ListSidebarInterfance) => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>  {
-                items.map((e, i) => <Link className={classes.root} to={prefx + e} >
-                    <ListItem button className={classes.root} >
-                        <ListItemText primary={e} />
-                    </ListItem >
-                </Link>)}
-
-        </div>
+        <React.Fragment> {
+            items.map((e, i) => <Link className={classes.root} to={prefx + e} >
+                <ListItem button className={classes.root} >
+                    <ListItemText primary={e} />
+                </ListItem >
+            </Link>)} 
+        </React.Fragment>
     );
 }
