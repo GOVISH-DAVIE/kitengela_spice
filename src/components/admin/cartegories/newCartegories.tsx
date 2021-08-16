@@ -53,7 +53,7 @@ export const NewCartegories = () => <UserContext.Consumer>
         context => <NewCartegoriesFragment user={context.value.user} token={context.value.token} />
     }
 </UserContext.Consumer>
-let defaultCArtegoryVal: cartegoriesItemInterface[] = []
+export let defaultCArtegoryVal: cartegoriesItemInterface[] = []
 
 export const NewCartegoriesFragment: React.FC<UserContextInterface> = ({ user, token }) => {
     const [catregoryItem, setCatregoryItem] = useState(defaultCArtegoryVal)

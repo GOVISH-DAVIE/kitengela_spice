@@ -55,7 +55,7 @@ const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) =>
                             <Grid item sm={6} xs={6}>
 
                                 <Paper className={classes.paper} >
-                                    <NewProductForm />
+                                    <NewProductForm token={token}  />
                                 </Paper>
                             </Grid>
 
