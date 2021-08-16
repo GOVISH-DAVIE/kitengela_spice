@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { url } from "../../../utils/utils";
 import UserContext, { UserContextInterface } from "../../../utils/context";
 import MenuAccordion from "../cartegories/cartegories";
+import { NewProductForm } from "./newproductForm";
 
 
 
@@ -54,6 +55,7 @@ const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) =>
                             <Grid item sm={6} xs={6}>
 
                                 <Paper className={classes.paper} >
+                                    <NewProductForm />
                                 </Paper>
                             </Grid>
 

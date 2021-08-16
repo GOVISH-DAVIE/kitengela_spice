@@ -1,6 +1,7 @@
 import  { useEffect, useState } from 'react';
 import './css/main.css';
 import './css/mobile.css';
+
 import UserContext, { defUser, UserContextInterface } from './utils/context';
 import { openRoutes, protectedRoutes } from "./utils/routes";
 import {
