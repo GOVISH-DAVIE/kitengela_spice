@@ -74,6 +74,5 @@ export const NewProductForm: FC<{ token: string | null, setCart: (items: cartego
         
 
         <br />
-        <Button variant='outlined' size='large' color='inherit' > Create Product</Button>
     </form>)
 }
