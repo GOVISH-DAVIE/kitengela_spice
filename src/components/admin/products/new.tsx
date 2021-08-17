@@ -9,6 +9,9 @@ import { url } from "../../../utils/utils";
 import UserContext, { UserContextInterface } from "../../../utils/context";
 import MenuAccordion from "../cartegories/cartegories";
 import { NewProductForm } from "./newproductForm";
+import { cartegoriesItemInterface, defaultCArtegoryVal } from "../cartegories/newCartegories";
+import { SelectCartegories } from "./selectCartyegories";
+import { UploadImages } from "./uploadImages";
 
 
 
@@ -35,7 +38,8 @@ export const NewProducts = () => <UserContext.Consumer>
 </UserContext.Consumer>
 
 const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) => {
-
+    const [cartegories, setCartegories] = useState(defaultCArtegoryVal)
+    const setCart = (items: cartegoriesItemInterface[]) => setCartegories(items)
     const classes = useStyles();
     return (<div>
         <Navigation />
@@ -55,14 +59,18 @@ const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) =>
                             <Grid item sm={6} xs={6}>
 
                                 <Paper className={classes.paper} >
-                                    <NewProductForm token={token}  />
+                                    <NewProductForm setCart={setCart} token={token} />
                                 </Paper>
                             </Grid>
 
                             <Grid item sm={6} xs={6}>
 
                                 <Paper elevation={0} color={'transparent'} className={classes.paper} >
-
+                                    <SelectCartegories cartegoryItem={cartegories} />
+                                </Paper>
+                                <br />
+                                <Paper elevation={0} color={'transparent'} className={classes.paper} >
+                                    <UploadImages />
                                 </Paper>
                             </Grid>
                         </Grid>

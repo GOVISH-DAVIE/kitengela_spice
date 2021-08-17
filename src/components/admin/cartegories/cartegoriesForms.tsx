@@ -42,8 +42,6 @@ const CartegoriesFragment: React.FC<{ addToList: (form: cartegoriesItemInterface
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>  setValue((event.target as HTMLInputElement).value);
     
     const handleChangeBto = (event: React.ChangeEvent<HTMLInputElement>) => setBto((event.target as HTMLInputElement).value);
-    
-
 
     const classes = useStyles();
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

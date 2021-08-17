@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export const NewProductForm: FC<{ token: string | null }> = ({ token }) => {
+export const NewProductForm: FC<{ token: string | null, setCart: (items: cartegoriesItemInterface[]) => void }> = ({ token, setCart }) => {
     const [catregoryItem, setCatregoryItem] = useState(defaultCArtegoryVal)
     const [cartegoriesLoading, setCartegoriesLoading] = useState(true)
     useEffect(() => {
@@ -47,15 +47,13 @@ export const NewProductForm: FC<{ token: string | null }> = ({ token }) => {
         }).then(data => {
             setCartegoriesLoading(false)
             setCatregoryItem(data.data)
+            setCart(data.data)
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const [bto, setBto] = useState('');
-    const [subcategoryBto, setsubcategoryBto] = useState('')
-    const handleChangeBto = (event: React.ChangeEvent<HTMLInputElement>) => setBto((event.target as HTMLInputElement).value);
-    const handleChangeSubBto = (event: React.ChangeEvent<HTMLInputElement>) => setsubcategoryBto((event.target as HTMLInputElement).value);
-    const handleParent = (e: cartegoriesItemInterface) => setBto(e.id.toString())
+    
+
 
     const classes = useStyles();
     return (<form action="" className={classes.root}>
@@ -73,48 +71,8 @@ export const NewProductForm: FC<{ token: string | null }> = ({ token }) => {
         <ReactQuill theme="snow" />
         <br />
 
-        <Button variant='outlined' size='large'> <Image />Upload Main Image </Button>
-        <br />
-        <br />
-        <Button variant='outlined' size='large'> <Image />Upload Product Images </Button>
-        <br />
-        <br />
-        <FormControl component="fieldset">
-            <FormLabel component="legend">Sub Cartegory Of:</FormLabel>
-        </FormControl>
-        {
-            cartegoriesLoading ? <p>Loading...</p> : <RadioGroup aria-label="gender" name="belongto" value={bto} onChange={handleChangeBto}>
+        
 
-                {
-                    catregoryItem.map((e, i) => e.belongsTo == null ? <Accordion>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                        >
-                            <Typography className={classes.heading}>
-                                <FormControlLabel key={`${i}radios`} value={`${e.id}`} control={<Radio color="default" />} label={e.name} />
-                            </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                {
-                                    e.get_sub_cartegories.map((value, index) => <RadioGroup aria-label="gender" name="belongto" value={subcategoryBto} onChange={handleChangeSubBto}> <ListItem key={`item${index}`} button>
-                                        <ListItemText primary={<FormControlLabel key={`${i}radiosSubcategory`} value={`${value.id}`} control={<Radio color="default" />} onClick={() => handleParent(e)} label={value.name} />
-                                        } />
-                                    </ListItem> </RadioGroup>
-                                    )
-                                }
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion> : <></>
-
-                    )
-                }
-            </RadioGroup>
-        }
-        <br /><br />
-        <ReactQuill theme="snow" />
         <br />
         <Button variant='outlined' size='large' color='inherit' > Create Product</Button>
     </form>)
