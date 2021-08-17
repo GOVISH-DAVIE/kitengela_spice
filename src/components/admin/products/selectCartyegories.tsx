@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 export const SelectCartegories: FC<{
-    cartegoryItem: cartegoriesItemInterface[]
-}> = ({ cartegoryItem }) => {
+    cartegoryItem: cartegoriesItemInterface[],
+    loading: boolean
+}> = ({ cartegoryItem, loading }) => {
 
 
     const [bto, setBto] = useState('');
@@ -49,7 +50,7 @@ export const SelectCartegories: FC<{
             <br />
 
             {
-                cartegoryItem.map((e, i) => e.belongsTo == null ? <Accordion>
+                loading ? <>loading...</> : cartegoryItem.map((e, i) => e.belongsTo == null ? <Accordion>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"

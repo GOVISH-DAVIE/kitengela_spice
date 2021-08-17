@@ -53,8 +53,7 @@ const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) =>
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    const [cartegories, setCartegories] = useState(defaultCArtegoryVal)
-    const classes = useStyles();
+     const classes = useStyles();
     return (<div>
         <Navigation />
         <div className="adminConsole">
@@ -80,7 +79,7 @@ const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) =>
                             <Grid item sm={6} xs={6}>
 
                                 <Paper elevation={0} color={'transparent'} className={classes.paper} >
-                                    <SelectCartegories cartegoryItem={cartegories} />
+                                    <SelectCartegories loading={cartegoriesLoading} cartegoryItem={catregoryItem} />
                                 </Paper>
                                 <br />
                                 <Paper elevation={0} color={'transparent'} className={classes.paper} >
