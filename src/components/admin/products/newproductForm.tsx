@@ -34,29 +34,35 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export const NewProductForm: FC<{ token: string | null,   }> = ({ token }) => {
- 
+export const NewProductForm: FC<{ 
+     updateProductName: React.Dispatch<React.SetStateAction<string>> ,
+     updateShortDes: React.Dispatch<React.SetStateAction<string>> 
+    }> = ({  updateProductName, updateShortDes }) => {
 
-    
+
+
+    const handleProductNameChange = (e: React.ChangeEvent<HTMLInputElement>) => updateProductName(e.currentTarget.value);
+    const handleShortDescription = (e: React.ChangeEvent<HTMLInputElement>) => updateShortDes(e.currentTarget.value);
 
 
     const classes = useStyles();
     return (<form action="" className={classes.root}>
         <TextField type='text' required name='name' className={classes.tfiled}
-            color="primary" id="standard-basic" label="Product Name" />
+            color="primary" id="standard-basic" label="Product Name" onChange={handleProductNameChange} />
         <TextField
             id="outlined-multiline-static"
             label="Short Description"
             className={classes.tfiled}
             multiline
             rows={4}
+            onChange={handleShortDescription}
             variant="outlined"
         />
         <br />
         <ReactQuill theme="snow" />
         <br />
 
-        
+
 
         <br />
     </form>)

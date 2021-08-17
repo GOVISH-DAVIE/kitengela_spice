@@ -40,6 +40,8 @@ export const NewProducts = () => <UserContext.Consumer>
 const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) => {
     const [catregoryItem, setCatregoryItem] = useState(defaultCArtegoryVal)
     const [cartegoriesLoading, setCartegoriesLoading] = useState(true)
+    const [productName, setProductName] = useState('')
+    const [shortDescription, setShortDescription] = useState('')
     useEffect(() => {
         axios.get(`${url}cartegories`, {
             headers: {
@@ -53,7 +55,7 @@ const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) =>
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-     const classes = useStyles();
+    const classes = useStyles();
     return (<div>
         <Navigation />
         <div className="adminConsole">
@@ -72,7 +74,7 @@ const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) =>
                             <Grid item sm={6} xs={6}>
 
                                 <Paper className={classes.paper} >
-                                    <NewProductForm token={token} />
+                                    <NewProductForm updateProductName={setProductName} updateShortDes={setShortDescription}  />
                                 </Paper>
                             </Grid>
 
