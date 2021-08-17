@@ -38,8 +38,22 @@ export const NewProducts = () => <UserContext.Consumer>
 </UserContext.Consumer>
 
 const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) => {
+    const [catregoryItem, setCatregoryItem] = useState(defaultCArtegoryVal)
+    const [cartegoriesLoading, setCartegoriesLoading] = useState(true)
+    useEffect(() => {
+        axios.get(`${url}cartegories`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer  ${token}`
+            }
+        }).then(data => {
+            setCartegoriesLoading(false)
+            setCatregoryItem(data.data)
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     const [cartegories, setCartegories] = useState(defaultCArtegoryVal)
-    const setCart = (items: cartegoriesItemInterface[]) => setCartegories(items)
     const classes = useStyles();
     return (<div>
         <Navigation />
@@ -59,7 +73,7 @@ const NewProductsFragment: React.FC<UserContextInterface> = ({ user, token }) =>
                             <Grid item sm={6} xs={6}>
 
                                 <Paper className={classes.paper} >
-                                    <NewProductForm setCart={setCart} token={token} />
+                                    <NewProductForm token={token} />
                                 </Paper>
                             </Grid>
 

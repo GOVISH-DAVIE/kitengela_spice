@@ -34,23 +34,8 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export const NewProductForm: FC<{ token: string | null, setCart: (items: cartegoriesItemInterface[]) => void }> = ({ token, setCart }) => {
-    const [catregoryItem, setCatregoryItem] = useState(defaultCArtegoryVal)
-    const [cartegoriesLoading, setCartegoriesLoading] = useState(true)
-    useEffect(() => {
-        axios.get(`${url}cartegories`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': `Bearer  ${token}`
-            }
-        }).then(data => {
-            setCartegoriesLoading(false)
-            setCatregoryItem(data.data)
-            setCart(data.data)
-        });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+export const NewProductForm: FC<{ token: string | null,   }> = ({ token }) => {
+ 
 
     
 
