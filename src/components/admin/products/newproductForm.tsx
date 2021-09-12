@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export const NewProductForm: FC<{ 
-     updateProductName: React.Dispatch<React.SetStateAction<string>> ,
-     updateShortDes: React.Dispatch<React.SetStateAction<string>> 
-    }> = ({  updateProductName, updateShortDes }) => {
+export const NewProductForm: FC<{
+    updateProductName: React.Dispatch<React.SetStateAction<string>>,
+    updateShortDes: React.Dispatch<React.SetStateAction<string>>
+}> = ({ updateProductName, updateShortDes }) => {
 
 
 

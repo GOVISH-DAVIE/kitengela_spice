@@ -19,20 +19,20 @@ import Cookies from './utils/cookies';
 function App() {
   let [userState, setUserState] = useState(defUser)
   const updateUser = (e: UserContextInterface) => { setUserState(e) }
-  useEffect(() => {
-    console.log((Cookies.get('user') === ''));
-    if ((Cookies.get('user') === '')) {
-      setUserState({
-        user: null,
-        token: null
-      })
-    } else {
+    useEffect(() => {
+      console.log((Cookies.get('user') === ''));
+      if ((Cookies.get('user') === '')) {
+        setUserState({
+          user: null,
+          token: null
+        })
+      } else {
 
-      setUserState(JSON.parse(Cookies.get('user')))
-    }
+        setUserState(JSON.parse(Cookies.get('user')))
+      }
 
-    // setUserState(Cookies.get('user'))
-  }, [])
+      // setUserState(Cookies.get('user'))
+    }, [])
   return (
     <Router>
 
