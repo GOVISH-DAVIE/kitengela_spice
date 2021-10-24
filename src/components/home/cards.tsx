@@ -28,7 +28,7 @@ export default function ProductCard() {
                     $20 </Typography>
             </CardContent>
             <CardActions>
-                <Fab variant="extended">
+                <Fab color='primary' variant="extended">
                     <AddShoppingCart sx={{ mr: 1 }} />
                     Navigate
                 </Fab>

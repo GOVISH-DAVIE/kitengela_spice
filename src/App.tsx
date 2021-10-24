@@ -9,10 +9,21 @@ import {
   Route,
 } from "react-router-dom";
 import Cookies from './utils/cookies';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#364F6B',
+      
+    },
+    secondary: {
+      main: '#ff3d00'
+    },
+  },
+});
 
-
-
+// 364F6B
 
 
 
@@ -32,6 +43,7 @@ function App() {
     }, [])
   return (
     <Router>
+      <ThemeProvider theme={theme}>
 
       <UserContext.Provider value={{ value: userState, updateUser: updateUser }} >
 
@@ -44,6 +56,7 @@ function App() {
 
         </div>
       </UserContext.Provider>
+      </ThemeProvider>
     </Router>
   );
 }
