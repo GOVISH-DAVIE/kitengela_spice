@@ -1,10 +1,14 @@
-$primaryFontColor : rgb(248, 248, 248);
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
 
+
+
+$primaryFontColor : rgb(248, 248, 248);
 $primaryColor : #364F6B;
 body {
 
     background-color: rgb(243, 243, 243);
     // background-color: #E4EBF6;
+    font-family: 'Zen Kurenaido', sans-serif;
 
     .main {
 

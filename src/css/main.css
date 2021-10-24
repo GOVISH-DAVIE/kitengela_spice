@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap");
 body {
   background-color: #f3f3f3;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 body .main {
