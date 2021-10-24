@@ -6,7 +6,7 @@ body .main {
   background-color: rgba(255, 255, 255, 0.15);
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
-  color: #383838;
+  color: #f8f8f8;
   font-weight: 600;
 }
 
@@ -47,6 +47,7 @@ body .main .navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #364F6B;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -61,7 +62,8 @@ body .main .navigation .logo {
 body .main .navigation .navi {
   float: left;
   height: 70px;
-  font-size: larger;
+  font-size: 18px;
+  font-weight: 300;
   width: 40%;
 }
 
@@ -73,18 +75,17 @@ body .main .navigation .navi ul li {
   list-style: none;
   text-decoration: none;
   float: left;
-  width: 25%;
+  margin-left: 25px;
 }
 
 body .main .navigation .navi ul li a {
   text-decoration: none;
-  color: #383838;
+  color: #f8f8f8;
 }
 
 body .main .navigation .cartIco {
   float: left;
   height: 70px;
-  width: 20%;
   color: black;
 }
 

@@ -1,14 +1,14 @@
 import React from 'react';
 import { makeStyles, } from '@mui/styles';
-import { Typography, IconButton, CardContent, CardMedia, CardHeader, Card, CardActions, Button, Fab } from '@mui/material';
-import { red } from '@mui/material/colors';
-import { ShoppingCart, SettingsOverscan, AddShoppingCart } from '@mui/icons-material';
+import { Typography, CardContent, CardMedia, Card, CardActions, Fab, Grid } from '@mui/material';
+import { AddShoppingCart } from '@mui/icons-material';
 
 
 
 const style = makeStyles({
     card: {
-        background: 'rgba(255, 255, 255, .8)'
+        background: 'rgba(255, 255, 255, .8)',
+        borderRadius: '20px'
     }
 })
 export default function ProductCard() {
@@ -28,11 +28,13 @@ export default function ProductCard() {
                     $20 </Typography>
             </CardContent>
             <CardActions>
-                <Fab color='primary' variant="extended">
-                    <AddShoppingCart sx={{ mr: 1 }} />
-                    Navigate
-                </Fab>
- 
+                <Grid justifyContent={'center'} container>
+                    <Fab color='primary' variant="extended">
+                        <AddShoppingCart sx={{ mr: 1 }} />
+                        Add To Cart
+                    </Fab>
+                </Grid>
+
             </CardActions>
         </Card>
     );

@@ -1,6 +1,6 @@
-$primaryFontColor : rgb(56, 56, 56);
+$primaryFontColor : rgb(248, 248, 248);
 
-
+$primaryColor : #364F6B;
 body {
 
     background-color: rgb(243, 243, 243);
@@ -42,7 +42,7 @@ body {
             height: 70px;
             width: 100%;
             display: flex;
-            // background-color: black;
+            background-color: $primaryColor;
 
             justify-content: space-evenly;
 
@@ -55,7 +55,8 @@ body {
             .navi {
                 float: left;
                 height: 70px;
-                font-size: larger;
+                font-size: 18px;
+                font-weight: 300;
                 width: 40%;
 
                 ul {
@@ -65,7 +66,8 @@ body {
                         list-style: none;
                         text-decoration: none;
                         float: left;
-                        width: 25%;
+                        // width: 25%;
+                        margin-left: 25px;
 
                         a {
                             text-decoration: none;
@@ -78,7 +80,7 @@ body {
             .cartIco {
                 float: left;
                 height: 70px;
-                width: 20%;
+                // width: 20%;
                 color: black;
 
                 ul {

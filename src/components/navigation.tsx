@@ -23,9 +23,7 @@ export const Navigation = () => {
                     logos
                 </IconButton></div>
                 <div className='navi '>
-{
-    // JSON.stringify((context.value.user === null))
-}
+ 
                     {(context.value.user === null) === true ? <ul>
                         <li><Link to='/'>Home</Link> </li>
                         <li> <Link to='/login'>LogIn</Link> </li>

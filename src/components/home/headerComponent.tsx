@@ -19,7 +19,7 @@ export const HeaderComponent = () => {
     })
     return (
         <div className='header'>
-            <Grid container spacing={2}>
+            <Grid container  >
                 <Grid item xs={1} sm={3}>
                     <MainCartegories />
                 </Grid>
