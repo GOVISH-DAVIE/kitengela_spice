@@ -6,7 +6,7 @@ interface ProductViewInterface {
 
 export const ProductView: React.FC<ProductViewInterface> = ({ img }) => {
     return (<div className="viewProductDetails">
-         
+
         <div className="mainImage">
             <img alt={img} src={img} />
         </div>

@@ -26,12 +26,9 @@ function App() {
           user: null,
           token: null
         })
-      } else {
-
+      } else { 
         setUserState(JSON.parse(Cookies.get('user')))
-      }
-
-      // setUserState(Cookies.get('user'))
+      } 
     }, [])
   return (
     <Router>
