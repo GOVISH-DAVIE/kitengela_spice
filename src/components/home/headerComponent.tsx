@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { Grid, styled, Paper, Container } from '@mui/material';
 import ProductCard from "./cards";
+import MainCartegories from "./cartegories";
 
 
 
@@ -20,6 +21,7 @@ export const HeaderComponent = () => {
         <div className='header'>
             <Grid container spacing={2}>
                 <Grid item xs={1} sm={3}>
+                    <MainCartegories />
                 </Grid>
                 <Grid item xs={12} sm={9}>
                     <Container>

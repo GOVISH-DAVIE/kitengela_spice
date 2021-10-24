@@ -1,9 +1,9 @@
 import { Cartegories } from "../components/admin/cartegories/cartegories";
 import { NewCartegories } from "../components/admin/cartegories/newCartegories";
 import { NewProducts } from "../components/admin/products/new";
-import { AuthenticationFalback } from "../components/auth/authenticationFallback";
-import { Login } from "../components/auth/login";
-import { SignUp } from "../components/auth/signup";
+import { AuthenticationFalback } from "../Pages/auth/authenticationFallback";
+import { Login } from "../Pages/auth/login";
+import { SignUp } from "../Pages/auth/signup";
 import { Home } from "../Pages/home";
 
 export const protectedRoutes = [
