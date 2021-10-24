@@ -1,4 +1,4 @@
- import { Fragment } from 'react';
+import { Fragment } from 'react';
 import { HeaderComponent } from '../components/home/headerComponent';
 import { Navigation } from '../components/navigation'
 import ProductListing from '../components/productList';
@@ -7,7 +7,16 @@ export const Home = () => {
     <Navigation />
     <br />
     <HeaderComponent />
-    <ProductListing/>
+    <ProductListing />
+    <br />
+    <br />
+
+    <div className="yellow">
+      <br />
+
+      <ProductListing />
+    </div>
+
 
   </Fragment>)
 }
