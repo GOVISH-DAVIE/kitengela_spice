@@ -34,6 +34,8 @@ const MainCartegories = () => {
         <ListItemIcon>
         </ListItemIcon>
         <ListItemText className='zenfont' primary="Sent mail" />
+
+        
       </ListItemButton>
       <ListItemButton>
         <ListItemIcon>

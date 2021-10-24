@@ -5,21 +5,25 @@
 
 $primaryFontColor : rgb(248, 248, 248);
 $primaryColor : #364F6B;
+$bgBody:#F6F4FF;
 
 .zenfont {
-    font-family: 'zen', sans-serif !important;
-    font-weight: 300 !important;
+    * {
+        font-family: 'zen', sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 25px;
+    }
 }
 
 body {
 
-    background-color: rgb(243, 243, 243);
+    background-color: $bgBody;
     // background-color: #E4EBF6;
     font-family: 'zen', sans-serif;
 
     .main {
 
-        background-color: rgba(255, 255, 255, .15);
+        background-color: $bgBody;
         backdrop-filter: blur(50px);
         color: $primaryFontColor;
         font-weight: 600;
@@ -150,7 +154,7 @@ body {
             align-items: center;
 
             .headerContainer {
-                background-color: rgb(29, 29, 29);
+                background-color: $primaryColor;
                 height: 65vh;
                 // width: 95vw;
                 border-radius: 40px;
