@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Mail, VpnKey, Visibility, VisibilityOff, Person, Phone } from "@material-ui/icons";
+import { Mail, VpnKey, Visibility, VisibilityOff, Person, Phone } from "@mui/icons-material";
 import { createStyles, makeStyles, Theme, InputAdornment, TextField, Button, Typography } from '@material-ui/core';
 import { emailExpression } from '../../utils/utils';
 

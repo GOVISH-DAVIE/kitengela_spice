@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import Typography from '@material-ui/core/Typography'; 
-import { Button } from '@material-ui/core';
+// import  from '@material-ui/core/Typography'; 
+import { Button, Typography } from '@mui/material';
 import { Redirect } from 'react-router-dom';
 
- 
+
 
 export const AuthenticationFalback = () => {
     const [redirect, setRedirect] = useState(false)
-    const handleRedirect = () => setRedirect(true) 
+    const handleRedirect = () => setRedirect(true)
 
 
     return (<div className="login">
-         {
+        {
             redirect ? <Redirect to={'/'} /> : null
         }
         <div className="canva"></div>
