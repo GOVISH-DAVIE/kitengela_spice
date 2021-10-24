@@ -1,16 +1,11 @@
 import { useState, useEffect } from "react";
-import NormalCard from "./cards";
-import RecipeReviewCard, { MobileCard } from './cards';
 
-import {Grid, styled, Paper} from '@mui/material';
+import { Grid, styled, Paper, Container } from '@mui/material';
+import ProductCard from "./cards";
 
 
-const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }));
+
+
 export const HeaderComponent = () => {
     const [width, setWidth] = useState(window.innerWidth)
     function handleResize() {
@@ -22,72 +17,55 @@ export const HeaderComponent = () => {
         window.addEventListener('resize', handleResize)
     })
     return (
-        width < 960 ? <div className='header'>
-            <div className='headerContainer' >
-                <div className='headerContainerGlass' >
-                    <div className='navHeader'>
-                        <p>Home / Product</p>
+        <div className='header'>
+            <Grid container spacing={2}>
+                <Grid item xs={1} sm={3}>
+                </Grid>
+                <Grid item xs={12} sm={9}>
+                    <Container>
+                        <div className='headerContainer' >
+                            <div className='headerContainerGlass' >
+                                <div className='navHeader'>
+                                    <p>Home / Product</p>
 
-                        <h2>Shop</h2>
-                        <div className='filter'>
-                            <p>Showing 1 - 12 results
+                                    <h2>Shop</h2>
+                                    <div className='filter'>
+                                        <p>Showing 1 - 12 results
 
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div className='properties' >
-                        <Grid container spacing={2}>
-                            <Grid item xs={6} sm={3}>
-                                <Item>xs=8</Item>
-                            </Grid>
-                            <Grid item xs={6} sm={3}>
-                                <Item>xs=4</Item>
-                            </Grid>
-                            <Grid item xs={4}>
-                                <Item>xs=4</Item>
-                            </Grid>
-                            <Grid item xs={8}>
-                                <Item>xs=8</Item>
-                            </Grid>
-                        </Grid>
-
-                    </div>
+                                        </p>
+                                    </div>
+                                </div>
 
 
 
-                </div>
-            </div>
-        </div> : <div>
-            <div className='header'>
-                <div className='headerContainer' >
-                    <div className='headerContainerGlass' >
-                        <div className='navHeader'>
-                            <p>Home / Product</p>
+                                <div className='properties' >
+                                    <Container>
+                                        <Grid container spacing={2}>
+                                            <Grid item xs={6} sm={3}>
+                                                <ProductCard />
+                                            </Grid>
+                                            <Grid item xs={6} sm={3}>
+                                                <ProductCard />
+                                            </Grid>
+                                            <Grid item xs={6} sm={3}>
+                                                <ProductCard />
+                                            </Grid>
+                                            <Grid item xs={6} sm={3}>
+                                                <ProductCard />
+                                            </Grid>
+                                        </Grid>
+                                    </Container>
 
-                            <h2>Shop</h2>
-                            <div className='filter'>
-                                <p>Showing 1 - 12 results
+                                </div>
 
-                                </p>
+
+
                             </div>
                         </div>
+                    </Container>
 
-
-                        <div className='properties' >
-                            <MobileCard />
-                            <MobileCard />
-                            <MobileCard />
-                            <MobileCard />
-
-                        </div>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+                </Grid>
+            </Grid>
+        </div >
     );
 }
