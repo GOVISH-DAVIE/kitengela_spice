@@ -1,18 +1,17 @@
 import * as React from 'react';
-import ListSubheader from '@mui/material/ListSubheader';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
+import { makeStyles, } from '@mui/styles';
+import { List, ListSubheader, ListItemButton, ListItemIcon, ListItemText, Collapse, } from '@mui/material';
+import { ExpandMore, ExpandLess } from '@mui/icons-material';
 
- const MainCartegories   = () =>{
+const style = makeStyles({
+  list: {
+    color: 'black', 
+  }
+})
+
+
+const MainCartegories = () => {
+  const classes  = style()
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -21,7 +20,8 @@ import StarBorder from '@mui/icons-material/StarBorder';
 
   return (
     <List
-      sx={{ width: '100%',  }}
+    className={`${classes.list} `}
+      sx={{ width: '100%', }}
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
@@ -31,25 +31,25 @@ import StarBorder from '@mui/icons-material/StarBorder';
       }
     >
       <ListItemButton>
-        <ListItemIcon> 
+        <ListItemIcon>
         </ListItemIcon>
-        <ListItemText primary="Sent mail" />
+        <ListItemText className='zenfont' primary="Sent mail" />
       </ListItemButton>
       <ListItemButton>
-        <ListItemIcon> 
+        <ListItemIcon>
         </ListItemIcon>
-        <ListItemText primary="Drafts" />
+        <ListItemText className='zenfont' primary="Drafts" />
       </ListItemButton>
-      <ListItemButton onClick={handleClick}>
-        <ListItemIcon> 
+      <ListItemButton className='zenfont' onClick={handleClick}>
+        <ListItemIcon>
         </ListItemIcon>
-        <ListItemText primary="Inbox" />
+        <ListItemText className='zenfont' primary="Inbox" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon> 
+            <ListItemIcon>
             </ListItemIcon>
             <ListItemText primary="Starred" />
           </ListItemButton>

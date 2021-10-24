@@ -1,14 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
-
-
+@font-face {
+    font-family: 'zen';
+    src: url(./ZenKurenaido-Regular.ttf);
+}
 
 $primaryFontColor : rgb(248, 248, 248);
 $primaryColor : #364F6B;
+
+.zenfont {
+    font-family: 'zen', sans-serif !important;
+    font-weight: 300 !important;
+}
+
 body {
 
     background-color: rgb(243, 243, 243);
     // background-color: #E4EBF6;
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'zen', sans-serif;
 
     .main {
 
