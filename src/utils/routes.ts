@@ -4,7 +4,7 @@ import { NewProducts } from "../components/admin/products/new";
 import { AuthenticationFalback } from "../components/auth/authenticationFallback";
 import { Login } from "../components/auth/login";
 import { SignUp } from "../components/auth/signup";
-import { Home } from "../components/home";
+import { Home } from "../Pages/home";
 
 export const protectedRoutes = [
     {
